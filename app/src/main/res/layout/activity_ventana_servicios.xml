@@ -6,4 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".VentanaServicios">
 
+    <LinearLayout
+        android:id="@+id/contenedor"
+        android:layout_width="405dp"
+        android:layout_height="413dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
