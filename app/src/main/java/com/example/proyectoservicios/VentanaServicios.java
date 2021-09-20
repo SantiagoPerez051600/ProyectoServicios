@@ -55,7 +55,9 @@ public class VentanaServicios extends AppCompatActivity {
                         bt.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
-                                Log.d("STATE","HOLA------------------");
+                                String aux;
+                                aux = bt.getText().toString();
+                                Log.d("STATE",""+aux);
                             }
                         });
 
