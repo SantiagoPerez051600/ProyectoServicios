@@ -58,6 +58,7 @@ public class VentanaServicios extends AppCompatActivity {
                                 String aux;
                                 aux = bt.getText().toString();
                                 Log.d("STATE",""+aux);
+
                             }
                         });
 
