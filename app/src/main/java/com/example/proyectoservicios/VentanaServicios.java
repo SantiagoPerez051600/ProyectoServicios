@@ -59,6 +59,7 @@ public class VentanaServicios extends AppCompatActivity {
                                 Log.d("STATE",""+aux);
                                 siguiente(view);
 
+
                             }
                         });
 
