@@ -86,7 +86,7 @@ public class Servicio extends AppCompatActivity implements View.OnClickListener 
             DatePickerDialog datePickerDialog = new DatePickerDialog(this,new  DatePickerDialog.OnDateSetListener() {
                 @Override
                 public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfYear){
-                    txt_fecha.setText(dayOfYear+"/"+monthOfYear+"/"+year);
+                    txt_fecha.setText(dayOfYear+"/"+(monthOfYear+1)+"/"+year);
                 }
             },dia,mes,anio);
             datePickerDialog.show();
