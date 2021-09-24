@@ -43,7 +43,7 @@ public class VentanaServicios extends AppCompatActivity {
 
                 if(snapshot.exists()){
                     for (DataSnapshot ds: snapshot.getChildren()) {
-                        lista.add(new boton(1,""+ds.child("nombre").getValue().toString()));
+                        lista.add(new boton(1,""+ds.child("nombre").getValue().toString(),ds.getKey()));
                     }
                     for(boton b:lista){
                         Button bt = new Button(getApplicationContext());
@@ -57,7 +57,7 @@ public class VentanaServicios extends AppCompatActivity {
                                 String aux;
                                 aux = bt.getText().toString();
                                 Log.d("STATE",""+aux);
-                                siguiente(view);
+                                siguiente(view, b.key);
 
 
                             }
@@ -76,8 +76,11 @@ public class VentanaServicios extends AppCompatActivity {
 
 
     }
-    public void siguiente(View view){
+    public void siguiente(View view , String key){
+        Bundle parametro = new Bundle();
+        parametro.putString("key",key);
         Intent siguiente = new Intent(this, Servicio.class);
+        siguiente.putExtras(parametro);
         startActivity(siguiente);
 
     }
@@ -150,9 +153,11 @@ public class VentanaServicios extends AppCompatActivity {
     class boton{
         public int codigo;
         public String servicio;
-        public boton(int codigo, String servicio) {
+        public String key;
+        public boton(int codigo, String servicio, String key) {
             this.codigo = codigo;
             this.servicio = servicio;
+            this.key= key;
         }
     }
 

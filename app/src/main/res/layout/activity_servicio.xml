@@ -8,7 +8,7 @@
     tools:context=".Servicio">
 <LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical">
 
     <ImageView
@@ -16,16 +16,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
+        android:layout_margin="15dp"
         app:srcCompat="@drawable/ic_launcher_foreground" />
 
     <TextView
-        android:id="@+id/txt_precio"
+        android:id="@+id/tv_precio"
         android:layout_width="61dp"
         android:layout_height="29dp"
         android:layout_marginStart="258dp"
         android:layout_marginTop="39dp"
         android:layout_marginEnd="95dp"
-        android:layout_marginBottom="447dp"
+
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,73 +36,80 @@
         app:layout_constraintVertical_bias="0.1" />
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="308dp"
+        android:id="@+id/tv_descripcion"
+        android:layout_width="match_parent"
         android:layout_height="137dp"
-        android:layout_marginStart="49dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="54dp"
-        android:layout_marginBottom="276dp"
+        android:layout_margin="15dp"
         android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_precio"
-        app:layout_constraintVertical_bias="0.0" />
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp">
+        <EditText
+            android:id="@+id/txt_fecha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName" />
+        <Button
+            android:id="@+id/btn_fecha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="65dp"
+
+
+            android:backgroundTint="@color/black"
+            android:hint="@string/btn_Fecha"
+            android:textColorHint="@color/white"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="10dp">
+
+        <EditText
+            android:id="@+id/txt_hora"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+             />
+        <Button
+            android:id="@+id/btn_hora"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="65dp"
+
+
+            android:backgroundTint="@color/black"
+            android:hint="Hora"
+            android:textColorHint="@color/white"/>
+    </LinearLayout>
 
     <Button
-        android:id="@+id/btn_fecha"
-        android:layout_width="wrap_content"
+        android:id="@+id/btn_agendar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="263dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="54dp"
-        android:layout_marginBottom="31dp"
-        android:backgroundTint="@color/black"
-        android:hint="@string/btn_Fecha"
-        android:textColorHint="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/btn_hora"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        android:layout_margin="35dp"
 
-    <Button
-        android:id="@+id/btn_hora"
-        android:layout_width="93dp"
-        android:layout_height="47dp"
-        android:layout_marginStart="263dp"
-        android:layout_marginEnd="54dp"
-        android:backgroundTint="@color/black"
-        android:hint="@string/btn_hora"
-        android:textColorHint="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.861" />
 
-    <EditText
-        android:id="@+id/txt_fecha"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/txt_hora"
-        app:layout_constraintEnd_toStartOf="@+id/btn_fecha"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
-    <EditText
-        android:id="@+id/txt_hora"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toStartOf="@+id/btn_hora"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="589dp" />
+        android:hint="Agendar"
+        android:textColorHint="@color/black"
+        style="?attr/materialButtonOutlinedStyle"
+        app:strokeColor="@color/black"
+        app:cornerRadius="20dp"
+        />
+
+
+
+
 
 
 </LinearLayout>
