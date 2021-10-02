@@ -7,4 +7,10 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="primario">#5EDFFF</color>
+    <color name="secundario">#035397</color>
+    <color name="terciario">#5089C6</color>
+    <color name="texto">#B2FCFF</color>
+    <color name="card_view">#ECFCFF</color>
+    <color name="principal">#3E64FF</color>
 </resources>

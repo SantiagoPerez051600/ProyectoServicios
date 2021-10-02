@@ -1,11 +1,12 @@
 package com.example.proyectoservicios.models;
 
-public class Servicios {
+import java.io.Serializable;
 
-    String nombre, descripcion, URLfoto, precio;
+public class Servicios implements Serializable {
 
-    public Servicios() {
-    }
+    public String nombre, descripcion, URLfoto, precio;
+
+
 
     public Servicios(String nombre, String descripcion, String URLfoto, String precio) {
         this.nombre = nombre;
