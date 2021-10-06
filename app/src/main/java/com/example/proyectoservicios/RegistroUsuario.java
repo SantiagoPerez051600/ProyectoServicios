@@ -7,14 +7,13 @@ import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.widget.ImageView;
 
-public class loginActivity extends AppCompatActivity {
+public class RegistroUsuario extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_registro_usuario);
         final ImageView imageView= findViewById(R.id.imagen);
         imageView.setColorFilter(Color.parseColor("#3E64FF"), PorterDuff.Mode.SRC_IN);
     }
-
 }

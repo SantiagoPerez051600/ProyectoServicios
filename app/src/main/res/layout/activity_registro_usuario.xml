@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegistroUsuario"
+    android:orientation="vertical"
+    android:padding="25dp"
+    >
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/imagen"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+
+            android:src="@drawable/ic_paw_print_animal_icon_141148"
+            android:transitionName="logoImagenTrans"
+            android:layout_gravity="left"
+            ></ImageView>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="63dp"
+            android:orientation="horizontal">
+
+            <TextView
+
+                android:id="@+id/bienvenidoslabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/happy_monkey"
+                android:text="Bienvenido"
+                android:textColor="@color/principal"
+
+                android:textSize="35sp"
+                android:textStyle="bold"
+                android:transitionName="textTrans"></TextView>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/continuarlabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="56dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="60dp"
+
+            android:text="Registrate para Iniciar"
+            android:textSize="20sp"
+            android:transitionName="iniciaSesionTextTrans"></TextView>
+    </RelativeLayout>
+
+       <LinearLayout
+
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="14dp"
+           android:layout_marginBottom="14dp"
+           android:orientation="vertical"
+           >
+           <com.google.android.material.textfield.TextInputLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:id="@+id/nombreUsuario"
+               android:hint="Nombre completo"
+               style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+               <com.google.android.material.textfield.TextInputEditText
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:fontFamily="@font/happy_monkey"
+                   ></com.google.android.material.textfield.TextInputEditText>
+           </com.google.android.material.textfield.TextInputLayout>
+           <com.google.android.material.textfield.TextInputLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:id="@+id/CorreoUsuario"
+               android:hint="Correo Electronico"
+               android:transitionName="CorreoTrans"
+               style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+               <com.google.android.material.textfield.TextInputEditText
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:fontFamily="@font/happy_monkey"
+                   ></com.google.android.material.textfield.TextInputEditText>
+           </com.google.android.material.textfield.TextInputLayout>
+           <com.google.android.material.textfield.TextInputLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:id="@+id/DireccionUsuario"
+               android:hint="Direccion "
+               style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+               <com.google.android.material.textfield.TextInputEditText
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:fontFamily="@font/happy_monkey"
+                   ></com.google.android.material.textfield.TextInputEditText>
+           </com.google.android.material.textfield.TextInputLayout>
+           <com.google.android.material.textfield.TextInputLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:id="@+id/TelefonoUsuari"
+               android:hint="Telefono"
+               style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+               <com.google.android.material.textfield.TextInputEditText
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:fontFamily="@font/happy_monkey"
+                   ></com.google.android.material.textfield.TextInputEditText>
+           </com.google.android.material.textfield.TextInputLayout>
+           <com.google.android.material.textfield.TextInputLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:id="@+id/CedulaUsuario"
+               android:hint="Cedeula De Cuidadania"
+               style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+               <com.google.android.material.textfield.TextInputEditText
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:fontFamily="@font/happy_monkey"
+                   ></com.google.android.material.textfield.TextInputEditText>
+           </com.google.android.material.textfield.TextInputLayout>
+           <com.google.android.material.textfield.TextInputLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:id="@+id/ContraseñaUsuario"
+               android:hint="Contraseña"
+               android:transitionName="ContraseñaTrans"
+               app:passwordToggleEnabled="true"
+               style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+               <com.google.android.material.textfield.TextInputEditText
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:fontFamily="@font/happy_monkey"
+                   android:inputType="textPassword"
+                   ></com.google.android.material.textfield.TextInputEditText>
+           </com.google.android.material.textfield.TextInputLayout>
+           <com.google.android.material.textfield.TextInputLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:id="@+id/ConfContraseña"
+               android:hint="Confirmar Contraseña"
+               android:transitionName="ConfiContraseñaTrans"
+               app:passwordToggleEnabled="true"
+               style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+               <com.google.android.material.textfield.TextInputEditText
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:fontFamily="@font/happy_monkey"
+                   android:inputType="textPassword"
+                   ></com.google.android.material.textfield.TextInputEditText>
+           </com.google.android.material.textfield.TextInputLayout>
+
+           <com.google.android.material.button.MaterialButton
+               android:id="@+id/registrar"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:text="REGISTRAR"
+               android:layout_marginTop="12dp"
+               android:layout_marginBottom="12dp"
+               android:backgroundTint="@color/principal"
+               android:transitionName="BtnRegistrartrans"></com.google.android.material.button.MaterialButton>
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:textAlignment="center"
+               android:textSize="20dp"
+               android:layout_marginBottom="10dp"
+               android:fontFamily="@font/happy_monkey"
+               android:layout_gravity="center"
+               android:clickable="true"
+               android:focusable="true"
+               android:textStyle="bold"
+               android:textColor="@color/principal"
+               android:text="¿Ya tienes una cuenta?\n Inicia sesión!"
+               android:transitionName="newUserTrans"></TextView>
+       </LinearLayout>
+
+
+
+</LinearLayout>
+
