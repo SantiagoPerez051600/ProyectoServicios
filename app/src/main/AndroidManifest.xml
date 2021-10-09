@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
         <activity
-            android:name=".MainActivity"
+            android:name=".RegistroUsuario"
             android:exported="true" />
         <activity
             android:name=".loginActivity"
@@ -28,7 +28,7 @@
             android:name=".Listado"
             android:exported="true" />
         <activity
-            android:name=".RegistroUsuario"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
