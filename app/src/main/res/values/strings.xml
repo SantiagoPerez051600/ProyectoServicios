@@ -11,4 +11,7 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="btn_Fecha">Fecha</string>
     <string name="btn_hora">Hora</string>
+    <string name="subject" />
+    <string name="message" />
+    <string name="send" />
 </resources>

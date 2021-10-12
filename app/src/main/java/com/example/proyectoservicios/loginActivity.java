@@ -8,6 +8,8 @@ import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.StrictMode;
+import android.util.Log;
 import android.util.Pair;
 import android.view.View;
 import android.widget.ImageView;
@@ -16,12 +18,24 @@ import android.widget.TextView;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputLayout;
 
+import java.util.Properties;
+
+import javax.mail.Authenticator;
+import javax.mail.Message;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+
 public class loginActivity extends AppCompatActivity {
-     ImageView imageView;
+    ImageView imageView;
     TextView nuevoUsuario, bienvenido, continuar;
     TextInputLayout correo, contraseña;
     MaterialButton iniciosesion;
-
+    public String correo1="santiago.grosso051600@gmail.com";
+    public String contraseña2="tatiana051600";
+    public Session session;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,5 +72,8 @@ public class loginActivity extends AppCompatActivity {
             }
         });
     }
+
+
+
 
 }

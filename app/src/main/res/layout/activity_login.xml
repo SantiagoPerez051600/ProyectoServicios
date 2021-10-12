@@ -35,20 +35,23 @@
         android:transitionName="continuarTrans"
         android:textSize="24sp"
         android:fontFamily="@font/happy_monkey"></TextView>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="14dp"
         android:layout_marginBottom="14dp"
         android:orientation="vertical">
+
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/usuario"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
-            android:id="@+id/usuario"
-            android:transitionName="correoTrans"
             android:hint="Correo"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            android:transitionName="correoTrans">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -57,58 +60,61 @@
             </com.google.android.material.textfield.TextInputEditText>
 
         </com.google.android.material.textfield.TextInputLayout>
+
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/contraseña"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
-            android:id="@+id/contraseña"
-            android:transitionName="contraseñaTrans"
             android:hint="Contraseña"
-            app:passwordToggleEnabled="true"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            android:transitionName="contraseñaTrans"
+            app:passwordToggleEnabled="true">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/happy_monkey"
-                android:inputType="textPassword">
-            </com.google.android.material.textfield.TextInputEditText>
+                android:inputType="textPassword"></com.google.android.material.textfield.TextInputEditText>
 
         </com.google.android.material.textfield.TextInputLayout>
+
         <TextView
             android:id="@+id/olvideContraseña"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAlignment="textEnd"
-            android:textSize="20dp"
-            android:fontFamily="@font/happy_monkey"
             android:layout_gravity="end"
             android:clickable="true"
             android:focusable="true"
-            android:text="¿Olvidaste tu contraseña?"></TextView>
+            android:fontFamily="@font/happy_monkey"
+            android:text="¿Olvidaste tu contraseña?"
+            android:textAlignment="textEnd"
+            android:textSize="20dp"></TextView>
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/inicio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Iniciar Sesion"
             android:layout_marginTop="12dp"
             android:layout_marginBottom="70dp"
-            android:transitionName="inicioTrans"
-            android:backgroundTint="@color/principal">
-        </com.google.android.material.button.MaterialButton>
+            android:backgroundTint="@color/principal"
+            android:text="Iniciar Sesion"
+            android:transitionName="inicioTrans"></com.google.android.material.button.MaterialButton>
+
         <TextView
             android:id="@+id/nuevo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:textSize="20dp"
-            android:textColor="@color/principal"
-            android:fontFamily="@font/happy_monkey"
             android:layout_gravity="center"
             android:clickable="true"
             android:focusable="true"
+            android:fontFamily="@font/happy_monkey"
+            android:text="¿Eres nuevo? Registrate!"
+            android:textAlignment="center"
+            android:textColor="@color/principal"
+            android:textSize="20dp"
             android:textStyle="bold"
-            android:transitionName="nuevoTrans"
-            android:text="¿Eres nuevo? Registrate!"></TextView>
+            android:transitionName="nuevoTrans"></TextView>
 
 
     </LinearLayout>

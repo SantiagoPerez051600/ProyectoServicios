@@ -6,6 +6,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.os.Bundle;
+
+
+import android.os.StrictMode;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -13,6 +16,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
+
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -22,6 +26,16 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Properties;
+
+import javax.mail.Authenticator;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+import javax.mail.Message;
+
 
 public class Servicio extends AppCompatActivity implements View.OnClickListener {
     Button btn_fecha;
@@ -31,6 +45,7 @@ public class Servicio extends AppCompatActivity implements View.OnClickListener 
     TextView tv_precio,tv_descripcion;
     private int dia,mes,anio,hora,minuto;
     private DatabaseReference Database;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +60,7 @@ public class Servicio extends AppCompatActivity implements View.OnClickListener 
         Database = FirebaseDatabase.getInstance().getReference();
         btn_fecha.setOnClickListener( this);
         btn_hora.setOnClickListener(this);
+
         Bundle parametros = this.getIntent().getExtras();
         String key = parametros.getString("key");
         Database.child("servicios").child(key).addValueEventListener(new ValueEventListener() {
@@ -66,11 +82,9 @@ public class Servicio extends AppCompatActivity implements View.OnClickListener 
             @Override
             public void onClick(View view) {
 
-                Toast toast1 =
-                        Toast.makeText(getApplicationContext(),
-                                "Se agendo su cita para " + txt_fecha.getText().toString(), Toast.LENGTH_SHORT);
-
+                Toast toast1 = Toast.makeText(getApplicationContext(), "Se agendo su cita para " + txt_fecha.getText().toString(), Toast.LENGTH_SHORT);
                 toast1.show();
+
             }
         });
 
@@ -105,6 +119,7 @@ public class Servicio extends AppCompatActivity implements View.OnClickListener 
             tp.show();
         }
     }
+
 
 
 

@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -24,9 +25,18 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Properties;
 
 
 import android.os.Bundle;
+
+import javax.mail.Authenticator;
+import javax.mail.Message;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 
 public class DescriptionActivity extends AppCompatActivity implements View.OnClickListener {
     Button btn_fecha;
@@ -36,6 +46,9 @@ public class DescriptionActivity extends AppCompatActivity implements View.OnCli
     TextView tv_precio,tv_descripcion;
     private int dia,mes,anio,hora,minuto;
     private DatabaseReference Database;
+    String correo1="santiago.grosso051600@gmail.com";
+    String contraseña2="tatiana051600";
+    Session session;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,11 +75,10 @@ public class DescriptionActivity extends AppCompatActivity implements View.OnCli
             @Override
             public void onClick(View view) {
 
-                Toast toast1 =
-                        Toast.makeText(getApplicationContext(),
-                                "Se agendo su cita para " + txt_fecha.getText().toString(), Toast.LENGTH_SHORT);
-
+                Toast toast1 = Toast.makeText(getApplicationContext(), "Se agendo su cita para " + txt_fecha.getText().toString(), Toast.LENGTH_SHORT);
                 toast1.show();
+                enviarCorreo();
+
             }
         });
 
@@ -102,6 +114,37 @@ public class DescriptionActivity extends AppCompatActivity implements View.OnCli
         }
     }
 
+    public void enviarCorreo(){
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+        Properties p = new Properties();
+        p.put("mail.smtp.host","smtp.googlemail.com");
+        p.put("mail.smtp.socketFactory.port","465");
+        p.put("mail.smtp.socketFactory.class","javax.net.ssl.SSLSocketFactory");
+        p.put("mail.smtp.auth","true");
+        p.put("mail.smtp.port","465");
+
+        try {
+            session=Session.getDefaultInstance(p,new Authenticator(){
+                @Override
+                protected PasswordAuthentication getPasswordAuthentication(){
+                    return new PasswordAuthentication(correo1,contraseña2);
+                }
+            });
+            if(session!= null){
+                MimeMessage message = new MimeMessage(session);
+                message.setFrom(new InternetAddress(correo1));
+                message.setSubject("Solucitud De Agendamiento");
+                message.setRecipients(Message.RecipientType.TO,InternetAddress.parse("zebaz1999@outlook.es"));
+                message.setContent("aqui va el mensaje","text/html; charset=utf-8");
+                Transport.send(message);
+
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+
+        }
+    }
 
 
 }

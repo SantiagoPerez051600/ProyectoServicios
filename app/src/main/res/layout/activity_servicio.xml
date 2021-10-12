@@ -94,18 +94,17 @@
 
     <Button
         android:id="@+id/btn_agendar"
+        style="?attr/materialButtonOutlinedStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
+
         android:layout_margin="35dp"
-
-
-
         android:hint="Agendar"
+        android:onClick="onClick"
         android:textColorHint="@color/black"
-        style="?attr/materialButtonOutlinedStyle"
-        app:strokeColor="@color/black"
         app:cornerRadius="20dp"
-        />
+        app:strokeColor="@color/black" />
 
 
 
