@@ -4,22 +4,35 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical">
-
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
 
     <TextView
         android:layout_width="160dp"
         android:layout_height="50dp"
-        android:text="Servicios"
-        android:textStyle="bold"
-        android:layout_marginTop="10dp"
-        android:textSize="35dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="12dp"
         android:fontFamily="@font/happy_monkey"
+        android:text="Servicios"
         android:textColor="@color/principal"
+        android:textSize="35dp"
+        android:layout_marginLeft="110dp"
+        android:textStyle="bold"></TextView>
 
-        android:layout_gravity="center">
+    <ImageButton
+        android:id="@+id/cerarSesion"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/white"
+        android:src="@drawable/ic_login_icon_155170"></ImageButton>
+
+</RelativeLayout>
 
 
-    </TextView>
 
     <ScrollView
         android:layout_width="match_parent"

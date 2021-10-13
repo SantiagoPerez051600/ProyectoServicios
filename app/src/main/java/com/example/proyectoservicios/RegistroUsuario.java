@@ -9,21 +9,30 @@ import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Pair;
 import android.util.Patterns;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.regex.Pattern;
 
 public class RegistroUsuario extends AppCompatActivity {
@@ -33,7 +42,7 @@ public class RegistroUsuario extends AppCompatActivity {
     MaterialButton iniciosesion;
     ImageView imageView;
     private FirebaseAuth mAuth;
-
+    private FirebaseFirestore fStore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +79,7 @@ public class RegistroUsuario extends AppCompatActivity {
             }
         });
         mAuth = FirebaseAuth.getInstance();
+        fStore = FirebaseFirestore.getInstance();
     }
     public void validate(){
         String Semail = correo1.getText().toString();
@@ -127,10 +137,48 @@ public class RegistroUsuario extends AppCompatActivity {
 
     }
     public void registrar(String Semail, String Snombre, String Stelefono, String Sdireccion, String Scedula, String Scontraseña){
+
         mAuth.createUserWithEmailAndPassword(Semail, Scontraseña).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                //if()
+                if(task.isSuccessful()){
+
+
+                    FirebaseUser user = mAuth.getCurrentUser();
+                    String userID = user.getUid();
+                    Log.d("Registro", userID);
+                    DocumentReference documentReference = fStore.collection("Users").document(userID);
+
+                    Map<String,Object> userData = new HashMap<>();
+                    userData.put("correo",Semail);
+                    userData.put("nombre",Snombre);
+                    userData.put("telefono",Stelefono);
+                    userData.put("direccion",Sdireccion);
+                    userData.put("cedula",Scedula);
+
+                    documentReference.set(userData).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void unused) {
+                            Log.d("Registro", "llego");
+                            Toast.makeText(RegistroUsuario.this , "Se registro correctamente", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(RegistroUsuario.this, Listado.class);
+                            startActivity(intent);
+                            finish();
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(RegistroUsuario.this , "Fallo en registrarse", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+
+
+
+
+                }else{
+                    Toast.makeText(RegistroUsuario.this , "Fallo en registrarse", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

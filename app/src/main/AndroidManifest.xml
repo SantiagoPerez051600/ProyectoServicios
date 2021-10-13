@@ -25,10 +25,10 @@
             android:name=".VentanaServicios"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Listado"
             android:exported="true" />
         <activity
-            android:name=".Listado"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,5 +1,6 @@
 package com.example.proyectoservicios;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ActivityOptions;
@@ -11,14 +12,22 @@ import android.os.Bundle;
 import android.os.StrictMode;
 import android.util.Log;
 import android.util.Pair;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.Properties;
+import java.util.regex.Pattern;
 
 import javax.mail.Authenticator;
 import javax.mail.Message;
@@ -33,9 +42,8 @@ public class loginActivity extends AppCompatActivity {
     TextView nuevoUsuario, bienvenido, continuar;
     TextInputLayout correo, contraseña;
     MaterialButton iniciosesion;
-    public String correo1="santiago.grosso051600@gmail.com";
-    public String contraseña2="tatiana051600";
-    public Session session;
+    TextInputEditText correoEdit, contraseñaEdit;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +57,10 @@ public class loginActivity extends AppCompatActivity {
         contraseña=findViewById(R.id.contraseña);
         iniciosesion=findViewById(R.id.inicio);
         nuevoUsuario=findViewById(R.id.nuevo);
+        correoEdit= findViewById(R.id.correoEdit);
+        contraseñaEdit=findViewById(R.id.contraseñaEdit);
+
+        mAuth=FirebaseAuth.getInstance();
         nuevoUsuario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -71,9 +83,60 @@ public class loginActivity extends AppCompatActivity {
                 }
             }
         });
+
+        iniciosesion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                validate();
+            }
+        });
+
+
     }
 
+    public void validate(){
+        String Semail = correoEdit.getText().toString();
+        String Scontraseña = contraseñaEdit.getText().toString();
 
 
+
+        if(Semail.isEmpty() || !Patterns.EMAIL_ADDRESS.matcher(Semail).matches()){
+            correoEdit.setError("Correo Invalido");
+            return;
+        }else{
+            correoEdit.setError(null);
+        }
+
+        if (Scontraseña.isEmpty()){
+            contraseñaEdit.setError("Contraseña Invalida");
+            return;
+        } else if(Scontraseña.length() < 8){
+            contraseñaEdit.setError("Se necesitan mas de 8 caracteres");
+            return;
+        }else if(!Pattern.compile("[0-9]").matcher(Scontraseña).find()){
+            contraseñaEdit.setError("Almenos un numero");
+            return;
+        }else{
+            contraseñaEdit.setError(null);
+        }
+       iniciarsesion(Semail, Scontraseña);
+
+    }
+    public void iniciarsesion(String Semail, String Scontraseña){
+        mAuth.signInWithEmailAndPassword(Semail, Scontraseña)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if(task.isSuccessful()){
+                            Intent intent =new Intent(loginActivity.this, Listado.class);
+                            startActivity(intent);
+                            finish();
+                        }else{
+                            Toast.makeText(loginActivity.this,  "Credenciales Invalidas", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                });
+
+    }
 
 }
