@@ -107,6 +107,15 @@
             app:cornerRadius="20dp"
             />
 
+        <ImageButton
+            android:id="@+id/whatsap"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:src="@drawable/ic_whatsapp_logo_icon_134017"
+            android:layout_gravity="right"
+            android:backgroundTint="@color/white"></ImageButton>
+
+
 
 
 

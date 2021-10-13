@@ -6,12 +6,18 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -49,6 +55,7 @@ public class DescriptionActivity extends AppCompatActivity implements View.OnCli
     String correo1="santiago.grosso051600@gmail.com";
     String contraseña2="tatiana051600";
     Session session;
+    ImageButton imageButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,6 +70,8 @@ public class DescriptionActivity extends AppCompatActivity implements View.OnCli
         Database = FirebaseDatabase.getInstance().getReference();
         btn_fecha.setOnClickListener( this);
         btn_hora.setOnClickListener(this);
+        imageButton= findViewById(R.id.whatsap);
+        imageButton.setColorFilter(Color.parseColor("#3E64FF"), PorterDuff.Mode.SRC_IN);
 
         Servicios servicio1 = (Servicios) getIntent().getSerializableExtra("Servicio");
 
@@ -79,6 +88,15 @@ public class DescriptionActivity extends AppCompatActivity implements View.OnCli
                 toast1.show();
                 enviarCorreo();
 
+            }
+        });
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String _url ="https://wa.me/573197467815?text=Hola%20necesito%20informacion";
+                Uri _link = Uri.parse(_url);
+                Intent i = new Intent(Intent.ACTION_VIEW,_link);
+                startActivity(i);
             }
         });
 
