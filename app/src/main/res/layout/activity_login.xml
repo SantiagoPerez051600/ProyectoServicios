@@ -35,7 +35,6 @@
         android:transitionName="continuarTrans"
         android:textSize="24sp"
         android:fontFamily="@font/happy_monkey"></TextView>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
