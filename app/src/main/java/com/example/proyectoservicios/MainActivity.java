@@ -47,9 +47,16 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                 if(user != null){
-                    Intent intent = new Intent(MainActivity.this, Listado.class);
-                    startActivity(intent);
-                    finish();
+
+                    if(user.getEmail().equals("santiago.grosso051600@gmail.com")){
+                        Intent intent = new Intent(MainActivity.this, Administrador.class);
+                        startActivity(intent);
+                        finish();
+                    }else{
+                        Intent intent = new Intent(MainActivity.this, Listado.class);
+                        startActivity(intent);
+                        finish();
+                    }
                 }else{
                     Intent intent = new Intent(MainActivity.this, loginActivity.class);
                     Pair[] pairs= new Pair[2];

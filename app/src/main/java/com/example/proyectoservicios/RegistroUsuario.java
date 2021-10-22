@@ -163,7 +163,9 @@ public class RegistroUsuario extends AppCompatActivity {
                         public void onSuccess(Void unused) {
                             Log.d("Registro", "llego");
                             Toast.makeText(RegistroUsuario.this , "Se registro correctamente", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(RegistroUsuario.this, Listado.class);
+                            FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
+                            user.sendEmailVerification();
+                            Intent intent = new Intent(RegistroUsuario.this, loginActivity.class);
                             startActivity(intent);
                             finish();
                         }
@@ -173,10 +175,6 @@ public class RegistroUsuario extends AppCompatActivity {
                             Toast.makeText(RegistroUsuario.this , "Fallo en registrarse", Toast.LENGTH_SHORT).show();
                         }
                     });
-
-
-
-
                 }else{
                     Toast.makeText(RegistroUsuario.this , "Fallo en registrarse", Toast.LENGTH_SHORT).show();
                 }
