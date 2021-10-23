@@ -15,6 +15,9 @@
             android:name=".Administrador"
             android:exported="true" />
         <activity
+            android:name=".Recuperarcontra"
+            android:exported="true" />
+        <activity
             android:name=".Servicio"
             android:exported="true" />
         <activity

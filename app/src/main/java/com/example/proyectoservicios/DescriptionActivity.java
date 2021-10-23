@@ -10,7 +10,6 @@ import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.format.Time;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -77,7 +76,7 @@ public class DescriptionActivity extends AppCompatActivity implements View.OnCli
                         ec.enviarCorreo(fecha,nombreServicio,CorreoUsuario);
                         n.EnviarNotificacion(fecha,nombreServicio);
                         fecha = txt_fecha.getText().toString();
-                        agendar.crearCita(fecha,txt_hora.getText().toString(),servicio1.getNombre());
+                        agendar.crearCita(fecha,txt_hora.getText().toString(),servicio1.getNombre(),user.getEmail());
 
                     }else{
                         Toast toast1 = Toast.makeText(getApplicationContext(), "Verifique la fecha por favor", Toast.LENGTH_SHORT);
@@ -142,8 +141,6 @@ public class DescriptionActivity extends AppCompatActivity implements View.OnCli
         int mesA = hoy.month;
         int añoA = hoy.year;
         mesA = mesA+1;
-        Log.d("AQUI","dia: "+diaA+" mes: "+mesA+" año: "+añoA);
-        Log.d("AQUI","dia: "+dia+" mes: "+mes+" año: "+año);
         if(año==añoA){
             if(mes==mesA){
                 if(dia>diaA){

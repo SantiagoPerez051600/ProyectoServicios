@@ -45,5 +45,38 @@ public class EnvioDeCorreos {
 
         }
     }
+
+    public void aceptarOrechazarAgenda(String nombreServicio, String correoUsuario,String asunto, String mensaje){
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+        Properties p = new Properties();
+        p.put("mail.smtp.host","smtp.googlemail.com");
+        p.put("mail.smtp.socketFactory.port","465");
+        p.put("mail.smtp.socketFactory.class","javax.net.ssl.SSLSocketFactory");
+        p.put("mail.smtp.auth","true");
+        p.put("mail.smtp.port","465");
+
+        try {
+            session=Session.getDefaultInstance(p,new Authenticator(){
+                @Override
+                protected PasswordAuthentication getPasswordAuthentication(){
+                    return new PasswordAuthentication(correoAdmin,contraseñaAdmin);
+                }
+            });
+            if(session!= null){
+                MimeMessage message = new MimeMessage(session);
+                message.setFrom(new InternetAddress(correoAdmin));
+                message.setSubject(asunto);
+                message.setRecipients(Message.RecipientType.TO,InternetAddress.parse(correoUsuario));
+                message.setContent(mensaje+nombreServicio,"text/html; charset=utf-8");
+                Transport.send(message);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+
+        }
+    }
+
+
 }
 
