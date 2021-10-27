@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Administrador"
+    android:orientation="vertical"
+    android:padding="25dp">
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="15dp">
+        <ImageButton
+            android:id="@+id/cerarSesion"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="300dp"
+            android:backgroundTint="@color/white"
+            android:src="@drawable/ic_login_icon_155170"></ImageButton>
+        <ImageView
+            android:id="@+id/imagen"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="left"
+            android:src="@drawable/ic_paw_print_animal_icon_141148"
+            android:transitionName="logoImagenTrans"></ImageView>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="63dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/bienvenidoslabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/happy_monkey"
+                android:text="Bienvenido"
+                android:textColor="@color/principal"
+
+                android:textSize="33sp"
+                android:textStyle="bold"
+                android:transitionName="textTrans"></TextView>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/continuarlabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="left"
+            android:layout_marginTop="105dp"
+            android:layout_marginRight="20dp"
+            android:fontFamily="@font/happy_monkey"
+            android:text="Solicitudes de Agendamiento"
+            android:textSize="22sp"
+            android:transitionName="continuarTrans"></TextView>
+    </RelativeLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="1100px"
+        android:orientation="vertical"
+        android:layout_marginTop="15dp"
+        android:padding="30dp">
+
+        <LinearLayout
+            android:id="@+id/contenedor"
+            android:layout_width="413dp"
+            android:layout_height="573dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="1dp"
+            android:orientation="vertical"
+            android:textSize="15sp"
+            android:fontFamily="@font/happy_monkey"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.428"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </LinearLayout>
+
+    </ScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200px"
+        android:orientation="horizontal"
+        >
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_aceptar"
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
+            android:text="ACEPTAR"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginBottom="12dp"
+            android:backgroundTint="@color/principal"
+            android:transitionName="inicioTrans"></com.google.android.material.button.MaterialButton>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_rechazar"
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
+            android:text="RECHAZAR"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginBottom="12dp"
+            android:backgroundTint="@color/principal"
+            android:transitionName="inicioTrans"></com.google.android.material.button.MaterialButton>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,20 +1,15 @@
 package com.example.proyectoservicios;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NotificationCompat;
-import androidx.core.app.NotificationManagerCompat;
 import android.app.DatePickerDialog;
-import android.app.Notification;
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
 import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
+import android.text.format.Time;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -28,6 +23,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+
 import java.util.Calendar;
 
 public class DescriptionActivity extends AppCompatActivity implements View.OnClickListener {
@@ -41,6 +38,7 @@ public class DescriptionActivity extends AppCompatActivity implements View.OnCli
     String fecha,nombreServicio,CorreoUsuario;
     Notificaciones n = new Notificaciones(c);
     ImageButton imageButton;
+    Agendar agendar = new Agendar();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,29 +56,36 @@ public class DescriptionActivity extends AppCompatActivity implements View.OnCli
         imageButton= findViewById(R.id.whatsap);
         imageButton.setColorFilter(Color.parseColor("#3E64FF"), PorterDuff.Mode.SRC_IN);
 
-
         Servicios servicio1 = (Servicios) getIntent().getSerializableExtra("Servicio");
-        tv_precio.setText(servicio1.getPrecio().toString());
-        tv_descripcion.setText(servicio1.getDescripcion().toString());
+        tv_precio.setText(servicio1.getPrecio());
+        tv_descripcion.setText(servicio1.getDescripcion());
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-
 
         btn_agendar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                try {
+                    if(validarFechar(dia,mes,anio)==true){
+                        Toast toast1 = Toast.makeText(getApplicationContext(), "Se agendo su cita para " + txt_fecha.getText().toString(), Toast.LENGTH_SHORT);
+                        toast1.show();
+                        fecha = txt_fecha.getText().toString();
+                        fecha= fecha+"-"+txt_hora.getText().toString();
+                        nombreServicio=servicio1.getNombre().toString();
+                        CorreoUsuario=user.getEmail().toString();
+                        ec.enviarCorreo(fecha,nombreServicio,CorreoUsuario);
+                        n.EnviarNotificacion(fecha,nombreServicio);
+                        fecha = txt_fecha.getText().toString();
+                        agendar.crearCita(fecha,txt_hora.getText().toString(),servicio1.getNombre(),user.getEmail());
 
-                Toast toast1 = Toast.makeText(getApplicationContext(), "Se agendo su cita para " + txt_fecha.getText().toString(), Toast.LENGTH_SHORT);
-                toast1.show();
-                fecha = txt_fecha.getText().toString();
-                fecha= fecha+"-"+txt_hora.getText().toString();
-                nombreServicio=servicio1.getNombre().toString();
-                CorreoUsuario=user.getEmail().toString();
-
-                ec.enviarCorreo(fecha,nombreServicio,CorreoUsuario);
-                n.EnviarNotificacion(fecha,nombreServicio);
-
-
+                    }else{
+                        Toast toast1 = Toast.makeText(getApplicationContext(), "Verifique la fecha por favor", Toast.LENGTH_SHORT);
+                        toast1.show();
+                    }
+                }catch (Exception e){
+                    Toast toast1 = Toast.makeText(getApplicationContext(), "Verifique los campos", Toast.LENGTH_SHORT);
+                    toast1.show();
+                }
             }
         });
         imageButton.setOnClickListener(new View.OnClickListener() {
@@ -106,6 +111,9 @@ public class DescriptionActivity extends AppCompatActivity implements View.OnCli
                 @Override
                 public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfYear){
                     txt_fecha.setText(dayOfYear+"/"+(monthOfYear+1)+"/"+year);
+                    dia=dayOfYear;
+                    mes=(monthOfYear+1);
+                    anio=year;
                 }
             },dia,mes,anio);
             datePickerDialog.show();
@@ -124,5 +132,34 @@ public class DescriptionActivity extends AppCompatActivity implements View.OnCli
             tp.show();
         }
     }
+
+    public boolean validarFechar(int dia,int mes,int año){
+        boolean bandera = true;
+        Time hoy = new Time(Time.getCurrentTimezone());
+        hoy.setToNow();
+        int diaA = hoy.monthDay;
+        int mesA = hoy.month;
+        int añoA = hoy.year;
+        mesA = mesA+1;
+        if(año==añoA){
+            if(mes==mesA){
+                if(dia>diaA){
+                    bandera = true;
+                }else{
+                    bandera = false;
+                }
+            }else if(mes<mesA){
+                bandera = false;
+            }else if(mes>mesA){
+                bandera = true;
+            }
+        }else if(año>añoA){
+            bandera = true;
+        }
+    return bandera;
+    }
+
+
+
 
 }

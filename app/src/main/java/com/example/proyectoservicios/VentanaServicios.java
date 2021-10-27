@@ -6,13 +6,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.provider.ContactsContract;
+
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
-import com.example.proyectoservicios.models.Servicios;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -31,7 +30,7 @@ public class VentanaServicios extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ventana_servicios);
-        contenedor = (LinearLayout)findViewById(R.id.contenedor);
+        contenedor = findViewById(R.id.contenedor);
         Database = FirebaseDatabase.getInstance().getReference();
         ArrayList<boton> lista = new ArrayList<boton>();
         //setServiciosFromFirebase();

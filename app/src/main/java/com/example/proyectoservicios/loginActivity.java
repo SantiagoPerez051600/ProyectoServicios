@@ -11,8 +11,7 @@ import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.StrictMode;
-import android.util.Log;
+
 import android.util.Pair;
 import android.util.Patterns;
 import android.view.View;
@@ -27,17 +26,10 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
-import java.util.Properties;
 import java.util.regex.Pattern;
 
-import javax.mail.Authenticator;
-import javax.mail.Message;
-import javax.mail.PasswordAuthentication;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
 
 public class loginActivity extends AppCompatActivity {
     ImageView imageView;
@@ -140,10 +132,22 @@ public class loginActivity extends AppCompatActivity {
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
+                        FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser();
                         if(task.isSuccessful()){
-                            Intent intent =new Intent(loginActivity.this, Listado.class);
-                            startActivity(intent);
-                            finish();
+                            if(user.isEmailVerified()) {
+                                if(user.getEmail().equals("santiago.grosso051600@gmail.com")){
+                                    Intent intent = new Intent(loginActivity.this, Administrador.class);
+                                    startActivity(intent);
+                                    finish();
+                                }else{
+                                    Intent intent = new Intent(loginActivity.this, Listado.class);
+                                    startActivity(intent);
+                                    finish();
+                                }
+
+                            }else{
+                                Toast.makeText(loginActivity.this,  "Correo no autenticado", Toast.LENGTH_LONG).show();
+                            }
                         }else{
                             Toast.makeText(loginActivity.this,  "Credenciales Invalidas", Toast.LENGTH_LONG).show();
                         }
