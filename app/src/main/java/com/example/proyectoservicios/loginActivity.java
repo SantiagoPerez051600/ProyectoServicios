@@ -1,3 +1,5 @@
+
+
 package com.example.proyectoservicios;
 
 import androidx.annotation.NonNull;
@@ -39,11 +41,12 @@ import javax.mail.internet.MimeMessage;
 
 public class loginActivity extends AppCompatActivity {
     ImageView imageView;
-    TextView nuevoUsuario, bienvenido, continuar;
+    TextView nuevoUsuario, bienvenido, continuar,olvidastecontra;
     TextInputLayout correo, contraseña;
     MaterialButton iniciosesion;
     TextInputEditText correoEdit, contraseñaEdit;
     private FirebaseAuth mAuth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +62,7 @@ public class loginActivity extends AppCompatActivity {
         nuevoUsuario=findViewById(R.id.nuevo);
         correoEdit= findViewById(R.id.correoEdit);
         contraseñaEdit=findViewById(R.id.contraseñaEdit);
+        olvidastecontra=findViewById(R.id.olvideContraseña);
 
         mAuth=FirebaseAuth.getInstance();
         nuevoUsuario.setOnClickListener(new View.OnClickListener() {
@@ -91,6 +95,15 @@ public class loginActivity extends AppCompatActivity {
             }
         });
 
+        olvidastecontra.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent c = new Intent(loginActivity.this,Recuperarcontra.class);
+                startActivity(c);
+                finish();
+            }
+        });
 
     }
 
