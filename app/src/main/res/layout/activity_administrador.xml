@@ -7,21 +7,21 @@
     tools:context=".Administrador"
     android:orientation="vertical"
     android:padding="25dp">
-    <ImageButton
-        android:id="@+id/cerarSesion"
-        android:layout_width="38dp"
-        android:layout_height="38dp"
-        android:layout_alignParentRight="true"
-        android:layout_marginLeft="300dp"
-        android:backgroundTint="@color/white"
-        android:src="@drawable/ic_login_icon_155170"></ImageButton>
+
     <RelativeLayout
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="20dp">
-
+        android:layout_marginTop="15dp">
+        <ImageButton
+            android:id="@+id/cerarSesion"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="300dp"
+            android:backgroundTint="@color/white"
+            android:src="@drawable/ic_login_icon_155170"></ImageButton>
         <ImageView
             android:id="@+id/imagen"
             android:layout_width="100dp"
@@ -39,7 +39,6 @@
             android:orientation="horizontal">
 
             <TextView
-
                 android:id="@+id/bienvenidoslabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

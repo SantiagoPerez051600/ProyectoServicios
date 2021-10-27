@@ -144,8 +144,6 @@ public class RegistroUsuario extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-
-
                     FirebaseUser user = mAuth.getCurrentUser();
                     String userID = user.getUid();
                     Log.d("Registro", userID);

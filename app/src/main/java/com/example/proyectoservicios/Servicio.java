@@ -7,8 +7,6 @@ import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.os.Bundle;
 
-
-import android.os.StrictMode;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -16,26 +14,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
-
-
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
 import java.util.Calendar;
-import java.util.Date;
-import java.util.Properties;
-
-import javax.mail.Authenticator;
-import javax.mail.PasswordAuthentication;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
-import javax.mail.Message;
-
 
 public class Servicio extends AppCompatActivity implements View.OnClickListener {
     Button btn_fecha;
@@ -50,13 +34,13 @@ public class Servicio extends AppCompatActivity implements View.OnClickListener 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_servicio);
-        btn_fecha=(Button) findViewById(R.id.btn_fecha);
-        btn_hora=(Button) findViewById(R.id.btn_hora);
-        btn_agendar=(Button) findViewById(R.id.btn_agendar);
-        txt_fecha= (EditText) findViewById(R.id.txt_fecha);
-        txt_hora=(EditText) findViewById(R.id.txt_hora);
-        tv_precio=(TextView) findViewById(R.id.tv_precio);
-        tv_descripcion=(TextView) findViewById(R.id.tv_descripcion);
+        btn_fecha= findViewById(R.id.btn_fecha);
+        btn_hora=findViewById(R.id.btn_hora);
+        btn_agendar=findViewById(R.id.btn_agendar);
+        txt_fecha=findViewById(R.id.txt_fecha);
+        txt_hora=findViewById(R.id.txt_hora);
+        tv_precio= findViewById(R.id.tv_precio);
+        tv_descripcion=findViewById(R.id.tv_descripcion);
         Database = FirebaseDatabase.getInstance().getReference();
         btn_fecha.setOnClickListener( this);
         btn_hora.setOnClickListener(this);
