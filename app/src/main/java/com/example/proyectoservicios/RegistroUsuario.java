@@ -52,7 +52,6 @@ public class RegistroUsuario extends AppCompatActivity {
         imageView= findViewById(R.id.imagen);
         imageView.setColorFilter(Color.parseColor("#3E64FF"), PorterDuff.Mode.SRC_IN);
 
-
         bienvenido= findViewById(R.id.bienvenidoslabel);
         continuar=findViewById(R.id.continuarlabel);
         nombre=findViewById(R.id.nombre1);

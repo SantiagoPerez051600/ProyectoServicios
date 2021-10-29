@@ -37,7 +37,7 @@ public class loginActivity extends AppCompatActivity {
     TextInputLayout correo, contraseña;
     MaterialButton iniciosesion;
     TextInputEditText correoEdit, contraseñaEdit;
-    private FirebaseAuth mAuth;
+    public FirebaseAuth mAuth;
 
 
     @Override

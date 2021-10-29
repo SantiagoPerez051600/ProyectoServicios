@@ -53,15 +53,12 @@ public class DescriptionActivity extends AppCompatActivity implements View.OnCli
         Database = FirebaseDatabase.getInstance().getReference();
         btn_fecha.setOnClickListener( this);
         btn_hora.setOnClickListener(this);
-        imageButton= findViewById(R.id.whatsap);
+        imageButton= findViewById(R.id.whatsapp);
         imageButton.setColorFilter(Color.parseColor("#3E64FF"), PorterDuff.Mode.SRC_IN);
-
         Servicios servicio1 = (Servicios) getIntent().getSerializableExtra("Servicio");
         tv_precio.setText(servicio1.getPrecio());
         tv_descripcion.setText(servicio1.getDescripcion());
-
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-
         btn_agendar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -97,9 +94,7 @@ public class DescriptionActivity extends AppCompatActivity implements View.OnCli
                 startActivity(i);
             }
         });
-
     }
-
     @Override
     public void onClick(View v) {
         if(v==btn_fecha){
@@ -107,15 +102,12 @@ public class DescriptionActivity extends AppCompatActivity implements View.OnCli
             dia=C.get(Calendar.DAY_OF_MONTH);
             mes=C.get(Calendar.MONTH);
             anio=C.get(Calendar.YEAR);
-            DatePickerDialog datePickerDialog = new DatePickerDialog(this,new  DatePickerDialog.OnDateSetListener() {
+            DatePickerDialog datePickerDialog = new DatePickerDialog(this,new  DatePickerDialog.OnDateSetListener(){
                 @Override
                 public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfYear){
                     txt_fecha.setText(dayOfYear+"/"+(monthOfYear+1)+"/"+year);
-                    dia=dayOfYear;
-                    mes=(monthOfYear+1);
-                    anio=year;
                 }
-            },dia,mes,anio);
+            },anio,mes,dia);
             datePickerDialog.show();
         }
         if(v==btn_hora){
@@ -158,8 +150,6 @@ public class DescriptionActivity extends AppCompatActivity implements View.OnCli
         }
     return bandera;
     }
-
-
 
 
 }

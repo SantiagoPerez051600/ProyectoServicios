@@ -36,10 +36,6 @@ public class Recuperarcontra extends AppCompatActivity {
         });
 
     }
-
-
-
-
     public void validate(){
         String cor= correo.getText().toString().trim();
         if (cor.isEmpty() || !Patterns.EMAIL_ADDRESS.matcher(cor).matches()){
