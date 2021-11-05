@@ -31,7 +31,7 @@
     <string name="btn_YaTienes">Do you already have an account? \ N Log in !!</string>
     <string name="txt_Nombre">Full name</string>
     <string name="txt_Direccion">Address</string>
-    <string name="txt_Telefono">Telephone</string>
+    <string name="txt_Telefono">Phone Number</string>
     <string name="txt_Cedula">ID Number</string>
     <string name="txt_ConfContraseña">Confirm Password</string>
     <string name="txt_Registrate">sign up to start</string>
@@ -40,7 +40,7 @@
     <string name="txt_Hogar">Animal Home</string>
     <!--Administrador-->
     <string name="Btn_Aceptar">Accept</string>
-    <string name="Btn_Rechazar">To refuse</string>
+    <string name="Btn_Rechazar">Refuse</string>
     <string name="txt_Solicutudes">Scheduling Requests</string>
     <!--RecuperarContraseña-->
     <string name="Btn_Recuperar">GET IT BACK</string>
