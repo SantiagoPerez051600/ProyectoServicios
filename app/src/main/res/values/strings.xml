@@ -1,17 +1,50 @@
 <resources>
-    <string name="app_name">ProyectoServicios</string>
-    <string name="title_activity_ventana_servicios">VentanaServicios</string>
-    <!-- Strings used for fragments for navigation -->
+    <string name="app_name">Hogar Animal</string>
+   Strings used for fragments for navigation
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
-    <string name="txt_Servicios">SERVICIOS</string>
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="btn_Fecha">Fecha</string>
-    <string name="btn_hora">Hora</string>
+
     <string name="subject" />
     <string name="message" />
     <string name="send" />
+    <!--Descripcion-->
+    <string name="btn_Fecha">Fecha</string>
+    <string name="btn_Hora">Hora</string>
+    <string name="btn_Agendar" >Agendar</string>
+    <string name="txt_Fecha">Fecha</string>
+    <string name="txt_Hora">Hora</string>
+    <!--Login-->
+    <string name="btn_IniciarSesion">INICIAR SESIÓN</string>
+    <string name="btn_OlvidasteC">¿Olvidó su contraseña?</string>
+    <string name="btn_EresNuevo" >¿Eres nuevo? Registrate!!</string>
+    <string name="txt_Correo">Correo Electronico</string>
+    <string name="txt_Contraseña">Contraseña</string>
+    <string name="txt_Bienvenido">Bienvenido</string>
+    <string name="txt_IniciaSesionPara">Inicia sesión para continuar</string>
+    <!--Registro-->
+    <string name="btn_Registra">REGISTRAR</string>
+    <string name="btn_YaTienes">¿Ya tienes una cuenta?\n Inicia sesión!!</string>
+    <string name="txt_Nombre">Nombre Completo</string>
+    <string name="txt_Direccion">Dirección</string>
+    <string name="txt_Telefono">Teléfono</string>
+    <string name="txt_Cedula">Cédula De Ciudadanía</string>
+    <string name="txt_ConfContraseña">Confirmar Contraseña</string>
+    <string name="txt_Registrate">Registrate para iniciar</string>
+    <!--Main-->
+    <string name="txt_Para">Para</string>
+    <string name="txt_Hogar">Hogar Animal</string>
+    <!--Administrador-->
+    <string name="Btn_Aceptar">Aceptar</string>
+    <string name="Btn_Rechazar">Rechazar</string>
+    <string name="txt_Solicutudes">Solicitudes De Agendamiento</string>
+    <!--RecuperarContraseña-->
+    <string name="Btn_Recuperar">RECUPERAR</string>
+    <string name="txt_Recuperar">Recuperar Contraseña</string>
+    <string name="txt_ingresaDatos">Ingresar los datos</string>
+   <!--listado-->
+   <string name="txt_Servicios">Servicios</string>
 </resources>

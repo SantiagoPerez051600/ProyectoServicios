@@ -44,7 +44,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/happy_monkey"
-                android:text="Bienvenido"
+                android:text="@string/txt_Bienvenido"
                 android:textColor="@color/principal"
 
                 android:textSize="33sp"
@@ -61,7 +61,7 @@
             android:layout_marginTop="105dp"
             android:layout_marginRight="20dp"
             android:fontFamily="@font/happy_monkey"
-            android:text="Solicitudes de Agendamiento"
+            android:text="@string/txt_Solicutudes"
             android:textSize="22sp"
             android:transitionName="continuarTrans"></TextView>
     </RelativeLayout>
@@ -99,7 +99,7 @@
             android:id="@+id/btn_aceptar"
             android:layout_width="120dp"
             android:layout_height="match_parent"
-            android:text="ACEPTAR"
+            android:text="@string/Btn_Aceptar"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="40dp"
             android:layout_marginBottom="12dp"
@@ -109,7 +109,7 @@
             android:id="@+id/btn_rechazar"
             android:layout_width="120dp"
             android:layout_height="match_parent"
-            android:text="RECHAZAR"
+            android:text="@string/Btn_Rechazar"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="30dp"
             android:layout_marginBottom="12dp"

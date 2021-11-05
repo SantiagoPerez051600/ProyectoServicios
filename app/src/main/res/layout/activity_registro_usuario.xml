@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/happy_monkey"
-                android:text="Bienvenido"
+                android:text="@string/txt_Bienvenido"
                 android:textColor="@color/principal"
 
                 android:textSize="35sp"
@@ -56,7 +56,7 @@
             android:layout_marginTop="56dp"
             android:layout_marginRight="40dp"
             android:fontFamily="@font/happy_monkey"
-            android:text="Registrate para Iniciar"
+            android:text="@string/txt_Registrate"
             android:textSize="20sp"
             android:transitionName="continuarTrans"></TextView>
     </RelativeLayout>
@@ -72,7 +72,7 @@
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
                android:id="@+id/nombreUsuario"
-               android:hint="Nombre completo"
+               android:hint="@string/txt_Nombre"
                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
                <com.google.android.material.textfield.TextInputEditText
                    android:layout_width="match_parent"
@@ -85,7 +85,7 @@
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
                android:id="@+id/CorreoUsuario"
-               android:hint="Correo Electronico"
+               android:hint="@string/txt_Correo"
                android:transitionName="correoTrans"
                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
                <com.google.android.material.textfield.TextInputEditText
@@ -99,7 +99,7 @@
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
                android:id="@+id/DireccionUsuario"
-               android:hint="Direccion "
+               android:hint="@string/txt_Direccion"
 
                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
                <com.google.android.material.textfield.TextInputEditText
@@ -113,7 +113,7 @@
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
                android:id="@+id/TelefonoUsuario"
-               android:hint="Telefono"
+               android:hint="@string/txt_Telefono"
 
                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
                <com.google.android.material.textfield.TextInputEditText
@@ -127,7 +127,7 @@
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
 
-               android:hint="Cedeula De Cuidadania"
+               android:hint="@string/txt_Cedula"
 
                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
                <com.google.android.material.textfield.TextInputEditText
@@ -141,7 +141,7 @@
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
                android:id="@+id/ContraseñaUsuario"
-               android:hint="Contraseña"
+               android:hint="@string/txt_Contraseña"
                android:transitionName="contraseñaTrans"
                app:passwordToggleEnabled="true"
                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
@@ -157,7 +157,7 @@
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
                android:id="@+id/ConfContraseña"
-               android:hint="Confirmar Contraseña"
+               android:hint="@string/txt_ConfContraseña"
                android:transitionName="ConfiContraseñaTrans"
                app:passwordToggleEnabled="true"
                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
@@ -174,7 +174,7 @@
                android:id="@+id/registrar"
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
-               android:text="REGISTRAR"
+               android:text="@string/btn_Registra"
                android:layout_marginTop="12dp"
                android:layout_marginBottom="12dp"
                android:backgroundTint="@color/principal"
@@ -193,7 +193,7 @@
                android:focusable="true"
                android:textStyle="bold"
                android:textColor="@color/principal"
-               android:text="¿Ya tienes una cuenta?\n Inicia sesión!"
+               android:text="@string/btn_YaTienes"
                android:transitionName="nuevoTrans"></TextView>
        </LinearLayout>
 

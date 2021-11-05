@@ -31,9 +31,6 @@
             android:name=".DescriptionActivity"
             android:exported="true" />
         <activity
-            android:name=".VentanaServicios"
-            android:exported="true" />
-        <activity
             android:name=".Listado"
             android:exported="true" />
         <activity

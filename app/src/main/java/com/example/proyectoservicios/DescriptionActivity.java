@@ -32,6 +32,7 @@ public class DescriptionActivity extends AppCompatActivity implements View.OnCli
     EditText txt_fecha,txt_hora;
     TextView tv_precio,tv_descripcion;
     public int dia,mes,anio,hora,minuto;
+    public int diaV,mesV,anioV,horaV;
     public DatabaseReference Database;
     public Context c=DescriptionActivity.this;
     EnvioDeCorreos ec = new EnvioDeCorreos();
@@ -63,7 +64,7 @@ public class DescriptionActivity extends AppCompatActivity implements View.OnCli
             @Override
             public void onClick(View view) {
                 try {
-                    if(validarFechar(dia,mes,anio)==true){
+                    if(validarFechar(diaV,mesV,anioV)==true){
                         Toast toast1 = Toast.makeText(getApplicationContext(), "Se agendo su cita para " + txt_fecha.getText().toString(), Toast.LENGTH_SHORT);
                         toast1.show();
                         fecha = txt_fecha.getText().toString();
@@ -106,6 +107,9 @@ public class DescriptionActivity extends AppCompatActivity implements View.OnCli
                 @Override
                 public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfYear){
                     txt_fecha.setText(dayOfYear+"/"+(monthOfYear+1)+"/"+year);
+                    diaV = dayOfYear;
+                    mesV = monthOfYear+1;
+                    anioV=year;
                 }
             },anio,mes,dia);
             datePickerDialog.show();

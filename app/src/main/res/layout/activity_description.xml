@@ -83,7 +83,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="65dp"
                 android:backgroundTint="@color/principal"
-                android:hint="Hora"
+                android:hint="@string/btn_Hora"
                 android:textColorHint="@color/white"/>
         </LinearLayout>
 
@@ -99,7 +99,7 @@
                 android:id="@+id/btn_agendar"
                 android:layout_width="250dp"
                 android:layout_height="60dp"
-                android:hint="Agendar"
+                android:hint="@string/btn_Agendar"
                 android:textColorHint="@color/principal"
                 style="?attr/materialButtonOutlinedStyle"
                 app:strokeColor="@color/black"

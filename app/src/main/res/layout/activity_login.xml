@@ -20,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/happy_monkey"
-        android:text="Bienvenido"
+        android:text="@string/txt_Bienvenido"
         android:layout_marginTop="28dp"
         android:textSize="40sp"
         android:textStyle="bold"
@@ -31,7 +31,7 @@
         android:id="@+id/continuar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Inicia sesión para continuar"
+        android:hint="@string/txt_IniciaSesionPara"
         android:transitionName="continuarTrans"
         android:textSize="24sp"
         android:fontFamily="@font/happy_monkey"></TextView>
@@ -48,7 +48,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
-            android:hint="Correo"
+            android:hint="@string/txt_Correo"
             android:transitionName="correoTrans">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -67,7 +67,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
-            android:hint="Contraseña"
+            android:hint="@string/txt_Contraseña"
             android:transitionName="contraseñaTrans"
             app:passwordToggleEnabled="true">
 
@@ -88,7 +88,7 @@
             android:clickable="true"
             android:focusable="true"
             android:fontFamily="@font/happy_monkey"
-            android:text="¿Olvidaste tu contraseña?"
+           android:text="@string/btn_OlvidasteC"
             android:textAlignment="textEnd"
             android:textSize="20dp"></TextView>
 
@@ -99,7 +99,7 @@
             android:layout_marginTop="12dp"
             android:layout_marginBottom="70dp"
             android:backgroundTint="@color/principal"
-            android:text="Iniciar Sesion"
+            android:text="@string/btn_IniciarSesion"
             android:transitionName="inicioTrans"></com.google.android.material.button.MaterialButton>
 
         <TextView

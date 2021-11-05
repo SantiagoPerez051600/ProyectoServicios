@@ -15,7 +15,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="12dp"
         android:fontFamily="@font/happy_monkey"
-        android:text="Servicios"
+        android:text="@string/txt_Servicios"
         android:textColor="@color/principal"
         android:textSize="35dp"
         android:layout_marginLeft="110dp"

@@ -20,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/happy_monkey"
-        android:text="Recuperar Contraseña"
+        android:text="@string/txt_Recuperar"
         android:layout_marginTop="28dp"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -31,7 +31,7 @@
         android:id="@+id/continuar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ingresa los datos "
+        android:text="@string/txt_ingresaDatos"
         android:transitionName="continuarTrans"
         android:textSize="30sp"
         android:layout_gravity="center"
@@ -50,7 +50,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
-            android:hint="Correo"
+            android:hint="@string/txt_Correo"
             android:transitionName="correoTrans">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -71,7 +71,7 @@
             android:layout_marginTop="12dp"
             android:layout_marginBottom="70dp"
             android:backgroundTint="@color/principal"
-            android:text="Recuperar"
+            android:text="@string/Btn_Recuperar"
             android:transitionName="inicioTrans"></com.google.android.material.button.MaterialButton>
 
 
