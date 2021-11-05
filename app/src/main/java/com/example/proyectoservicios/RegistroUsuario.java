@@ -172,6 +172,10 @@ public class RegistroUsuario extends AppCompatActivity {
                             Toast.makeText(RegistroUsuario.this , "Fallo en registrarse", Toast.LENGTH_SHORT).show();
                         }
                     });
+
+
+
+
                 }else{
                     Toast.makeText(RegistroUsuario.this , "Fallo en registrarse", Toast.LENGTH_SHORT).show();
                 }
