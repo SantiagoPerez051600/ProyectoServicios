@@ -14,7 +14,7 @@
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
 
         <activity
-            android:name=".MainActivity"
+            android:name=".ApiDog"
             android:exported="true" />
         <activity
             android:name=".Administrador"
@@ -38,7 +38,7 @@
             android:name=".Listado"
             android:exported="true" />
         <activity
-            android:name=".ApiDog"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
