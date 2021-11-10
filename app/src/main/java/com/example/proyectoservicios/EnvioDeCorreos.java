@@ -68,7 +68,7 @@ public class EnvioDeCorreos {
                 message.setFrom(new InternetAddress(correoAdmin));
                 message.setSubject(asunto);
                 message.setRecipients(Message.RecipientType.TO,InternetAddress.parse(correoUsuario));
-                message.setContent(mensaje+nombreServicio,"text/html; charset=utf-8");
+                message.setContent(mensaje,"text/html; charset=utf-8");
                 Transport.send(message);
             }
         }catch (Exception e){

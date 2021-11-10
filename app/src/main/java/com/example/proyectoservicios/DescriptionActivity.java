@@ -10,6 +10,7 @@ import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.format.Time;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -67,14 +68,14 @@ public class DescriptionActivity extends AppCompatActivity implements View.OnCli
         tv_precio.setText(servicio1.getPrecio());
         tv_descripcion.setText(servicio1.getDescripcion());
         tv_nombre.setText(servicio1.getNombre().toUpperCase());
-        Glide.with(this)
-                .load(servicio1.getURLfoto()).centerCrop().crossFade().diskCacheStrategy(DiskCacheStrategy.ALL).into(imagenServicio);
+        Glide.with(this).load(servicio1.getURLfoto()).centerCrop().crossFade().diskCacheStrategy(DiskCacheStrategy.ALL).into(imagenServicio);
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         btn_agendar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {
-                    if(validarFechar(diaV,mesV,anioV)==true){
+                    if(validarFechar(diaV,mesV,anioV)==true && !txt_hora.getText().toString().isEmpty()){
+
                         Toast toast1 = Toast.makeText(getApplicationContext(), "Se agendo su cita para " + txt_fecha.getText().toString(), Toast.LENGTH_SHORT);
                         toast1.show();
                         fecha = txt_fecha.getText().toString();
@@ -120,6 +121,7 @@ public class DescriptionActivity extends AppCompatActivity implements View.OnCli
                     diaV = dayOfYear;
                     mesV = monthOfYear+1;
                     anioV=year;
+                    Log.d("Holi","dia: "+diaV+"/mes: "+mesV+"/año: "+anioV);
                 }
             },anio,mes,dia);
             datePickerDialog.show();
@@ -147,6 +149,9 @@ public class DescriptionActivity extends AppCompatActivity implements View.OnCli
         int mesA = hoy.month;
         int añoA = hoy.year;
         mesA = mesA+1;
+        Log.d(" Actuales","dia: "+diaA+"/mes: "+mesA+"/año: "+añoA);
+        Log.d(" VALIDACION","dia: "+dia+"/mes: "+mes+"/año: "+año);
+
         if(año==añoA){
             if(mes==mesA){
                 if(dia>diaA){
@@ -161,6 +166,8 @@ public class DescriptionActivity extends AppCompatActivity implements View.OnCli
             }
         }else if(año>añoA){
             bandera = true;
+        }else if(año<añoA){
+            bandera = false;
         }
     return bandera;
     }
