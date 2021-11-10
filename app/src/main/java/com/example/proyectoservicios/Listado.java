@@ -89,7 +89,7 @@ public class Listado extends AppCompatActivity {
 
     }
     public void moveToDescription(Servicios item){
-        if(item.getNombre().equals("Vacunas")){
+        if(item.getNombre().equals("Vacunas") || item.getNombre().equals("Urgencia") || item.getNombre().equals("Labaratorio clinico") || item.getNombre().equals("Consulta Medica General")){
             Intent intent = new Intent(this, descripcion_vacuna.class);
             intent.putExtra("Servicio", item);
             startActivity(intent);

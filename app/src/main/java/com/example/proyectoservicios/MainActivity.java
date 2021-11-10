@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
                 if(user != null){
 
                     if(user.getEmail().equals("santiago.grosso051600@gmail.com")){
-                        Intent intent = new Intent(MainActivity.this, Administrador.class);
+                        Intent intent = new Intent(MainActivity.this, pruebaAdmin.class);
                         startActivity(intent);
                         finish();
                     }else{

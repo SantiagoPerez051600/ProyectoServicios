@@ -47,4 +47,10 @@
     <string name="txt_ingresaDatos">Ingresar los datos</string>
     <!--listado-->
     <string name="txt_Servicios">Servicios</string>
+    <!--DescripcionVacuna-->
+    <string name="txt_seleccione">Seleccione fecha y hora para el agendamiento</string>
+    <string name="txt_Raza">Raza</string>
+    <string name="txt_Edad">Edad</string>
+    <string name="txt_Reporte">Reporte de vacunas</string>
+    <string name="txt_Sintomas">¿Algun sintoma?</string>
 </resources>

@@ -176,13 +176,14 @@
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="25dp"
                         android:fontFamily="@font/happy_monkey"
-                        android:hint="Raza"
+                        android:hint="@string/txt_Raza"
                         android:backgroundTint="@color/principal"></EditText>
                     <EditText
                         android:id="@+id/edad"
                         android:layout_width="153dp"
                         android:layout_height="wrap_content"
-                        android:hint="Edad"
+                        android:inputType="number"
+                        android:hint="@string/txt_Edad"
                         android:fontFamily="@font/happy_monkey"
                         android:layout_marginHorizontal="25dp"
                         android:backgroundTint="@color/principal"></EditText>
@@ -199,7 +200,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="25dp"
                         android:fontFamily="@font/happy_monkey"
-                        android:hint="reporte de vacunas"
+                        android:hint="@string/txt_Reporte"
                         android:backgroundTint="@color/principal"></EditText>
 
                 </LinearLayout>
@@ -214,7 +215,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="25dp"
                         android:fontFamily="@font/happy_monkey"
-                        android:hint="¿Algun sintoma?"
+                        android:hint="@string/txt_Sintomas"
                         android:backgroundTint="@color/principal"
                         ></EditText>
 

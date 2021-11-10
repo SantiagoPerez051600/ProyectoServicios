@@ -33,7 +33,7 @@ public class Agendar {
         citas.put("Edad",""+edad);
         citas.put("Reporte",""+reporte);
         citas.put("Sintoma",""+sintoma);
-        Database.child("Solicitud de cita vacunas").push().setValue(citas);
+        Database.child("Solicitud de cita").push().setValue(citas);
     }
     public void aceptarCita(String correo, String servicio, String fecha,String hora){
 

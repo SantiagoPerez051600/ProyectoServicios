@@ -103,8 +103,6 @@ public class loginActivity extends AppCompatActivity {
         String Semail = correoEdit.getText().toString();
         String Scontraseña = contraseñaEdit.getText().toString();
 
-
-
         if(Semail.isEmpty() || !Patterns.EMAIL_ADDRESS.matcher(Semail).matches()){
             correoEdit.setError("Correo Invalido");
             return;
@@ -136,7 +134,7 @@ public class loginActivity extends AppCompatActivity {
                         if(task.isSuccessful()){
                             if(user.isEmailVerified()) {
                                 if(user.getEmail().equals("santiago.grosso051600@gmail.com")){
-                                    Intent intent = new Intent(loginActivity.this, Administrador.class);
+                                    Intent intent = new Intent(loginActivity.this, pruebaAdmin.class);
                                     startActivity(intent);
                                     finish();
                                 }else{

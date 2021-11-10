@@ -48,4 +48,10 @@
     <string name="txt_ingresaDatos">Enter the data</string>
     <!--listado-->
     <string name="txt_Servicios">Services</string>
+    <!--DescripcionVacuna-->
+    <string name="txt_seleccione">Select date and time for scheduling</string>
+    <string name="txt_Raza">Race</string>
+    <string name="txt_Edad">Years</string>
+    <string name="txt_Reporte">Vaccine report</string>
+    <string name="txt_Sintomas">Any symptoms?</string>
 </resources>

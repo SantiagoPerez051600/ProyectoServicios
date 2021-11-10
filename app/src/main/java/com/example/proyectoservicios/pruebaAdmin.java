@@ -17,6 +17,7 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.example.proyectoservicios.models.Servicios;
 import com.example.proyectoservicios.models.Solicitudes;
@@ -65,12 +66,16 @@ public class pruebaAdmin extends AppCompatActivity {
         aceptar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Toast toast1 = Toast.makeText(getApplicationContext(), "CARGANDO...", Toast.LENGTH_LONG);
+                toast1.show();
                 aceptar();
             }
         });
         rechazar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Toast toast1 = Toast.makeText(getApplicationContext(), "CARGANDO...", Toast.LENGTH_LONG);
+                toast1.show();
                 rechazar();
             }
         });
@@ -89,13 +94,12 @@ public class pruebaAdmin extends AppCompatActivity {
 
                         elements.add(new Solicitudes(servi, fecha, hora, correo));
                     }
-
-                    AdaptadorAdmin Adapter = new AdaptadorAdmin(elements, pruebaAdmin.this);
-                    RecyclerView recyclerView = findViewById(R.id.list_recycler);
-                    recyclerView.setHasFixedSize(true);
-                    recyclerView.setLayoutManager(new LinearLayoutManager(pruebaAdmin.this));
-                    recyclerView.setAdapter(Adapter);
-                    lista2 = Adapter.prueba();
+                        AdaptadorAdmin Adapter = new AdaptadorAdmin(elements, pruebaAdmin.this);
+                        RecyclerView recyclerView = findViewById(R.id.list_recycler);
+                        recyclerView.setHasFixedSize(true);
+                        recyclerView.setLayoutManager(new LinearLayoutManager(pruebaAdmin.this));
+                        recyclerView.setAdapter(Adapter);
+                        lista2 = Adapter.prueba();
                 }else{
                     elements = new ArrayList<>();
                     AdaptadorAdmin Adapter = new AdaptadorAdmin(elements, pruebaAdmin.this);
@@ -119,16 +123,18 @@ public class pruebaAdmin extends AppCompatActivity {
 
     public void aceptar() {
 
-
+        EnvioDeCorreos e = new EnvioDeCorreos();
         for (Solicitudes cb : lista2) {
             e.aceptarOrechazarAgenda(cb.getServi(), cb.getCorreo(), "SOLICITUD DE AGENDAMIENTO ACEPTADA", "Su solicutud de agendamiento fue aceptada," +
                     "\npor favor llegar con 10 minutos de anticipacion," +
                     "\nen caso de querer cancelar la cita, hacerlo 2 horas antes de la hora programada.");
             agendar.aceptarCita(cb.getCorreo(), cb.getServi(), cb.getFecha(), cb.getHora());
         }
+
     }
 
     public void rechazar() {
+
         EnvioDeCorreos e = new EnvioDeCorreos();
         for (Solicitudes cb : lista2) {
             e.aceptarOrechazarAgenda(cb.getServi(), cb.getCorreo(), "SOLICITUD DE AGENDAMIENTO RECHAZADA", "Su solicutud de agendamiento fue rechazada" +

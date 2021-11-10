@@ -121,7 +121,6 @@ public class DescriptionActivity extends AppCompatActivity implements View.OnCli
                     diaV = dayOfYear;
                     mesV = monthOfYear+1;
                     anioV=year;
-                    Log.d("Holi","dia: "+diaV+"/mes: "+mesV+"/año: "+anioV);
                 }
             },anio,mes,dia);
             datePickerDialog.show();
@@ -149,8 +148,6 @@ public class DescriptionActivity extends AppCompatActivity implements View.OnCli
         int mesA = hoy.month;
         int añoA = hoy.year;
         mesA = mesA+1;
-        Log.d(" Actuales","dia: "+diaA+"/mes: "+mesA+"/año: "+añoA);
-        Log.d(" VALIDACION","dia: "+dia+"/mes: "+mes+"/año: "+año);
 
         if(año==añoA){
             if(mes==mesA){
