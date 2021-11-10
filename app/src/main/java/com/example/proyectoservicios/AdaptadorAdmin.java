@@ -21,6 +21,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.proyectoservicios.models.Servicios;
 import com.example.proyectoservicios.models.Solicitudes;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -28,7 +29,7 @@ public class AdaptadorAdmin extends RecyclerView.Adapter<AdaptadorAdmin.ViewHold
     private List<Solicitudes> mData;
     private LayoutInflater mInflater;
     private Context context;
-
+    public ArrayList<Solicitudes> lista2 = new ArrayList<Solicitudes>();
 
 
     public AdaptadorAdmin(List<Solicitudes> itemList, Context context ){
@@ -49,10 +50,11 @@ public class AdaptadorAdmin extends RecyclerView.Adapter<AdaptadorAdmin.ViewHold
     }
     @Override
     public void onBindViewHolder(final AdaptadorAdmin.ViewHolder holder, final int position){
-
         holder.bindData(mData.get(position));
     }
-
+    public  ArrayList<Solicitudes> prueba(){
+        return lista2;
+    }
     public void setItems(List<Solicitudes> items){mData = items;}
     public class ViewHolder extends RecyclerView.ViewHolder{
         CheckBox solicitud;
@@ -64,9 +66,16 @@ public class AdaptadorAdmin extends RecyclerView.Adapter<AdaptadorAdmin.ViewHold
         void bindData(final Solicitudes item){
             //imagen.setColorFilter(Color.parseColor(item.getURLfoto()), PorterDuff.Mode.SRC_IN);
             solicitud.setText(item.getServi());
-
-
-
+            solicitud.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                    if(solicitud.isChecked()==true){
+                        lista2.add(item);
+                    }else if(solicitud.isChecked()==false){
+                        lista2.remove(item);
+                    }
+                }
+            });
         }
 
     }
