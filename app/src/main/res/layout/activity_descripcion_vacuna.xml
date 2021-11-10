@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Servicio">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tv_nombre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Nombre"
+                android:layout_gravity="center"
+                android:textSize="20dp"
+                android:fontFamily="@font/happy_monkey"
+                android:textStyle="bold"
+                android:textColor="@color/principal"
+                ></TextView>
+
+
+            <ImageView
+                android:id="@+id/iw_imagenServicio"
+                android:layout_width="200sp"
+                android:layout_height="180dp"
+                android:layout_marginTop="15dp"
+                android:layout_margin="15dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/ic_launcher_foreground" />
+
+            <TextView
+                android:id="@+id/tv_precio"
+                android:layout_width="120dp"
+                android:layout_height="29dp"
+                android:layout_marginStart="258dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="95dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:fontFamily="@font/happy_monkey"
+                android:text="precio"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iw_imagenServicio"
+                app:layout_constraintVertical_bias="0.1" />
+
+            <TextView
+                android:id="@+id/tv_descripcion"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_margin="15dp"
+                android:text="Descripcion"
+                android:textSize="20dp"
+                android:fontFamily="@font/happy_monkey"
+                />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                app:cardCornerRadius="20dp"
+                app:contentPadding="5dp"
+                app:cardBackgroundColor="@color/card_view"
+                android:layout_margin="10dp"
+                >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_gravity="center">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Seleccione fecha y hora para el agendamiento"
+                            android:textSize="18dp"
+                            android:textStyle="italic"
+                            android:layout_margin="10dp">
+
+                        </TextView>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_gravity="center">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_margin="1dp"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="10dp">
+                            <EditText
+                                android:id="@+id/txt_fecha"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:ems="10"
+                                android:layout_marginTop="15dp"
+                                android:inputType="textPersonName" />
+                            <Button
+                                android:id="@+id/btn_fecha"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="15dp"
+                                android:backgroundTint="@color/principal"
+                                android:hint="@string/btn_Fecha"
+                                android:textColorHint="@color/white"
+                                android:fontFamily="@font/happy_monkey"
+                                />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_margin="10dp"
+                            android:layout_gravity="center">
+
+                            <EditText
+                                android:id="@+id/txt_hora"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:ems="10"
+                                android:inputType="textPersonName"
+                                android:layout_marginBottom="15dp"
+                                />
+                            <Button
+                                android:id="@+id/btn_hora"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginBottom="15dp"
+                                android:backgroundTint="@color/principal"
+                                android:hint="@string/btn_Hora"
+                                android:fontFamily="@font/happy_monkey"
+                                android:textColorHint="@color/white"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center">
+
+                    <EditText
+                        android:id="@+id/raza"
+                        android:layout_width="153dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="25dp"
+                        android:fontFamily="@font/happy_monkey"
+                        android:hint="Raza"
+                        android:backgroundTint="@color/principal"></EditText>
+                    <EditText
+                        android:id="@+id/edad"
+                        android:layout_width="153dp"
+                        android:layout_height="wrap_content"
+                        android:hint="Edad"
+                        android:fontFamily="@font/happy_monkey"
+                        android:layout_marginHorizontal="25dp"
+                        android:backgroundTint="@color/principal"></EditText>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/reporte"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="25dp"
+                        android:fontFamily="@font/happy_monkey"
+                        android:hint="reporte de vacunas"
+                        android:backgroundTint="@color/principal"></EditText>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/sintoma"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="25dp"
+                        android:fontFamily="@font/happy_monkey"
+                        android:hint="¿Algun sintoma?"
+                        android:backgroundTint="@color/principal"
+                        ></EditText>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="20dp"
+                android:layout_marginTop="20dp">
+                <Button
+                    android:id="@+id/btn_agendar"
+                    android:layout_width="250dp"
+                    android:layout_height="60dp"
+                    android:hint="@string/btn_Agendar"
+                    android:textColorHint="@color/principal"
+                    style="?attr/materialButtonOutlinedStyle"
+                    app:strokeColor="@color/principal"
+                    app:cornerRadius="25dp"
+                    android:fontFamily="@font/happy_monkey"
+                    android:drawableBottom="@color/principal"
+                    android:textSize="18dp"
+                    />
+                <ImageButton
+                    android:id="@+id/whatsapp"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_marginLeft="40dp"
+
+                    android:src="@drawable/ic_whatsapp_logo_icon_134017"
+                    android:layout_gravity="right"
+
+                    android:backgroundTint="@color/white"></ImageButton>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</LinearLayout>

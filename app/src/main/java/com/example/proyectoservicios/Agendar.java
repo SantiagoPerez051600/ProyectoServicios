@@ -22,6 +22,19 @@ public class Agendar {
         citas.put("Email",""+email);
         Database.child("Solicitud de cita").push().setValue(citas);
     }
+    public void crearCitaVacunas(String fecha, String hora,String servicio,String email, String raza, String edad, String reporte, String sintoma){
+        Database = FirebaseDatabase.getInstance().getReference();
+        Map<String,String> citas = new HashMap<>();
+        citas.put("Fecha",""+fecha);
+        citas.put("Hora",""+hora);
+        citas.put("Servicio",""+servicio);
+        citas.put("Email",""+email);
+        citas.put("Raza",""+raza);
+        citas.put("Edad",""+edad);
+        citas.put("Reporte",""+reporte);
+        citas.put("Sintoma",""+sintoma);
+        Database.child("Solicitud de cita vacunas").push().setValue(citas);
+    }
     public void aceptarCita(String correo, String servicio, String fecha,String hora){
 
         Database = FirebaseDatabase.getInstance().getReference();

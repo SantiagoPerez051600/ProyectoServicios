@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Hogar Animal</string>
-   Strings used for fragments for navigation
+    Strings used for fragments for navigation
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
@@ -14,13 +14,13 @@
     <!--Descripcion-->
     <string name="btn_Fecha">Fecha</string>
     <string name="btn_Hora">Hora</string>
-    <string name="btn_Agendar" >Agendar</string>
+    <string name="btn_Agendar">Agendar</string>
     <string name="txt_Fecha">Fecha</string>
     <string name="txt_Hora">Hora</string>
     <!--Login-->
     <string name="btn_IniciarSesion">INICIAR SESIÓN</string>
     <string name="btn_OlvidasteC">¿Olvidó su contraseña?</string>
-    <string name="btn_EresNuevo" >¿Eres nuevo? Registrate!!</string>
+    <string name="btn_EresNuevo">¿Eres nuevo? Registrate!!</string>
     <string name="txt_Correo">Correo Electronico</string>
     <string name="txt_Contraseña">Contraseña</string>
     <string name="txt_Bienvenido">Bienvenido</string>
@@ -45,6 +45,6 @@
     <string name="Btn_Recuperar">RECUPERAR</string>
     <string name="txt_Recuperar">Recuperar Contraseña</string>
     <string name="txt_ingresaDatos">Ingresar los datos</string>
-   <!--listado-->
-   <string name="txt_Servicios">Servicios</string>
+    <!--listado-->
+    <string name="txt_Servicios">Servicios</string>
 </resources>

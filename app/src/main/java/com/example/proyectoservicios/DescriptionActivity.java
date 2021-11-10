@@ -59,7 +59,7 @@ public class DescriptionActivity extends AppCompatActivity implements View.OnCli
         tv_nombre = findViewById(R.id.tv_nombre);
         imagenServicio = findViewById(R.id.iw_imagenServicio);
         Database = FirebaseDatabase.getInstance().getReference();
-        btn_fecha.setOnClickListener( this);
+        btn_fecha.setOnClickListener(this);
         btn_hora.setOnClickListener(this);
         imageButton= findViewById(R.id.whatsapp);
         imageButton.setColorFilter(Color.parseColor("#3E64FF"), PorterDuff.Mode.SRC_IN);
