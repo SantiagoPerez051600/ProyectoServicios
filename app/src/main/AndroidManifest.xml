@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
         <activity
+            android:name=".MainActivity"
+            android:exported="true" />
+        <activity
             android:name=".descripcion_vacuna"
             android:exported="true" />
         <activity
@@ -39,7 +42,7 @@
             android:name=".Listado"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".pruebaAdmin"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

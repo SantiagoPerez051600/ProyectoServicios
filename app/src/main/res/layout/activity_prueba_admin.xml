@@ -73,22 +73,22 @@
         android:orientation="vertical"
         android:padding="30dp">
 
-        <LinearLayout
-            android:id="@+id/contenedor"
-            android:layout_width="413dp"
-            android:layout_height="573dp"
-            android:layout_marginStart="1dp"
-            android:layout_marginEnd="1dp"
-            android:fontFamily="@font/happy_monkey"
-            android:orientation="vertical"
-            android:textSize="15sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.428"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/list_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
+
+
+
+            </androidx.recyclerview.widget.RecyclerView>
+        </ScrollView>
 
     </ScrollView>
     <LinearLayout
