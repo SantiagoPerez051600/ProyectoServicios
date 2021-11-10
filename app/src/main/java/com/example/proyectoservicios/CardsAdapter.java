@@ -14,6 +14,8 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.proyectoservicios.models.Servicios;
 
 import java.util.List;
@@ -64,9 +66,11 @@ public class CardsAdapter extends RecyclerView.Adapter<CardsAdapter.ViewHolder> 
             cv= itemView.findViewById(R.id.cv);
         }
         void bindData(final Servicios item){
-            imagen.setColorFilter(Color.parseColor(item.getURLfoto()), PorterDuff.Mode.SRC_IN);
+            //imagen.setColorFilter(Color.parseColor(item.getURLfoto()), PorterDuff.Mode.SRC_IN);
             nombre.setText(item.getNombre());
             precio.setText(item.getPrecio());
+            Glide.with(context)
+                    .load(item.getURLfoto()).centerCrop().crossFade().diskCacheStrategy(DiskCacheStrategy.ALL).into(imagen);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

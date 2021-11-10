@@ -15,9 +15,13 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.proyectoservicios.models.Servicios;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -30,7 +34,8 @@ import java.util.Calendar;
 public class DescriptionActivity extends AppCompatActivity implements View.OnClickListener {
     Button btn_fecha,btn_hora,btn_agendar;
     EditText txt_fecha,txt_hora;
-    TextView tv_precio,tv_descripcion;
+    TextView tv_precio,tv_descripcion, tv_nombre;
+    ImageView imagenServicio;
     public int dia,mes,anio,hora,minuto;
     public int diaV,mesV,anioV,horaV;
     public DatabaseReference Database;
@@ -51,6 +56,8 @@ public class DescriptionActivity extends AppCompatActivity implements View.OnCli
         txt_hora=findViewById(R.id.txt_hora);
         tv_precio= findViewById(R.id.tv_precio);
         tv_descripcion=findViewById(R.id.tv_descripcion);
+        tv_nombre = findViewById(R.id.tv_nombre);
+        imagenServicio = findViewById(R.id.iw_imagenServicio);
         Database = FirebaseDatabase.getInstance().getReference();
         btn_fecha.setOnClickListener( this);
         btn_hora.setOnClickListener(this);
@@ -59,6 +66,9 @@ public class DescriptionActivity extends AppCompatActivity implements View.OnCli
         Servicios servicio1 = (Servicios) getIntent().getSerializableExtra("Servicio");
         tv_precio.setText(servicio1.getPrecio());
         tv_descripcion.setText(servicio1.getDescripcion());
+        tv_nombre.setText(servicio1.getNombre().toUpperCase());
+        Glide.with(this)
+                .load(servicio1.getURLfoto()).centerCrop().crossFade().diskCacheStrategy(DiskCacheStrategy.ALL).into(imagenServicio);
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         btn_agendar.setOnClickListener(new View.OnClickListener() {
             @Override

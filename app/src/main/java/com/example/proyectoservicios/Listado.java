@@ -65,7 +65,8 @@ public class Listado extends AppCompatActivity {
                         String nombre = ds.child("nombre").getValue().toString();
                         String descripcion= ds.child("Descripcion").getValue().toString();
                         String precio = ds.child("precio").getValue().toString();
-                        elements.add(new Servicios(nombre,descripcion,"#000000",precio));
+                        String URL = ds.child("URL").getValue().toString();
+                        elements.add(new Servicios(nombre,descripcion,URL,precio));
                     }
                     CardsAdapter cardsAdapter = new CardsAdapter(elements, Listado.this, new CardsAdapter.OnItemClickListener() {
                         @Override
