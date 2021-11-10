@@ -65,7 +65,7 @@ public class AdaptadorAdmin extends RecyclerView.Adapter<AdaptadorAdmin.ViewHold
         }
         void bindData(final Solicitudes item){
             //imagen.setColorFilter(Color.parseColor(item.getURLfoto()), PorterDuff.Mode.SRC_IN);
-            solicitud.setText(item.getServi());
+            solicitud.setText(item.getServi()+" para "+item.getFecha()+" a las "+item.getHora());
             solicitud.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
