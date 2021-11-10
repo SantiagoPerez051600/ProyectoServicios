@@ -12,7 +12,7 @@ import javax.mail.internet.MimeMessage;
 
 public class EnvioDeCorreos {
     String correoAdmin="santiago.grosso051600@gmail.com";
-    String contraseñaAdmin="tatiana051600";
+    String contraseñaAdmin="Tatiana051600";
     Session session;
 
     public void enviarCorreo(String fecha,String nombreServicio, String correoUsuario){

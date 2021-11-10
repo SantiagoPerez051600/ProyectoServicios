@@ -121,6 +121,7 @@
                    android:layout_height="wrap_content"
                    android:fontFamily="@font/happy_monkey"
                    android:id="@+id/telefono1"
+                   android:inputType="phone"
                    ></com.google.android.material.textfield.TextInputEditText>
            </com.google.android.material.textfield.TextInputLayout>
            <com.google.android.material.textfield.TextInputLayout
@@ -135,6 +136,7 @@
                    android:layout_height="wrap_content"
                    android:fontFamily="@font/happy_monkey"
                    android:id="@+id/cedula1"
+                   android:inputType="number"
                    ></com.google.android.material.textfield.TextInputEditText>
            </com.google.android.material.textfield.TextInputLayout>
            <com.google.android.material.textfield.TextInputLayout
