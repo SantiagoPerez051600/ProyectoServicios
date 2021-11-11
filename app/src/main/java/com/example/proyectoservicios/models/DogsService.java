@@ -4,7 +4,7 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 
 public interface DogsService {
-    @GET("hound/images")
+    @GET("images")
     Call<DogsResponse>obtenerListaDogs();
 
 }

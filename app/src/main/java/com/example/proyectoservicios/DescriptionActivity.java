@@ -86,7 +86,8 @@ public class DescriptionActivity extends AppCompatActivity implements View.OnCli
                         n.EnviarNotificacion(fecha,nombreServicio);
                         fecha = txt_fecha.getText().toString();
                         agendar.crearCita(fecha,txt_hora.getText().toString(),servicio1.getNombre(),user.getEmail());
-
+                        txt_fecha.setText("");
+                        txt_hora.setText("");
                     }else{
                         Toast toast1 = Toast.makeText(getApplicationContext(), "Verifique la fecha por favor", Toast.LENGTH_SHORT);
                         toast1.show();

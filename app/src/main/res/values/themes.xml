@@ -22,4 +22,11 @@
     <style name="Theme.ProyectoServicios.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.ProyectoServicios.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="BottomNavigation">
+        <item name="android:background">@color/principal</item>
+        <item name="itemIconTint">@color/texto</item>
+        <item name="itemTextColor">@color/card_view</item>
+
+    </style>
 </resources>

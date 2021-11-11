@@ -1,143 +1,164 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".preguntas_Frecuentes">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_gravity="center"
-        android:hint="@string/txt_titulo"
-        android:textStyle="bold"
-        android:textColorHint="@color/black"
-        android:textSize="35dp"
-        android:fontFamily="@font/happy_monkey"
-        ></TextView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center"
+            android:hint="@string/txt_titulo"
+            android:textStyle="bold"
+            android:textColorHint="@color/black"
+            android:textSize="25dp"
+            android:fontFamily="@font/happy_monkey"
+            ></TextView>
+    </LinearLayout>
+
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:padding="10dp"
         android:scrollbars="none"
-        android:padding="10dp">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
-    <!--Preguntas Frecuentes-->
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="60dp">
 
-    <!--Preguntas1-->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/txt_Pregunta1"
-        android:layout_marginTop="7dp"
-        android:textStyle="italic"
-        android:textColorHint="@color/principal"
-        android:textSize="30dp"
-        android:fontFamily="@font/happy_monkey"
-        ></TextView>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/txt_res1"
-        android:layout_marginTop="5dp"
-        android:textStyle="italic"
-        android:textColorHint="@color/black"
-        android:textSize="25dp"
-        android:fontFamily="@font/happy_monkey"
-        ></TextView>
-    <!--Preguntas2-->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/txt_Pregunta2"
-        android:layout_marginTop="7dp"
-        android:textStyle="italic"
-        android:textColorHint="@color/principal"
-        android:textSize="30dp"
-        android:fontFamily="@font/happy_monkey"
-        ></TextView>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/txt_res2"
-        android:layout_marginTop="5dp"
-        android:textStyle="italic"
-        android:textColorHint="@color/black"
-        android:textSize="25dp"
-        android:fontFamily="@font/happy_monkey"
-        ></TextView>
-    <!--Preguntas3-->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/txt_Pregunta3"
-        android:layout_marginTop="7dp"
-        android:textStyle="italic"
-        android:textColorHint="@color/principal"
-        android:textSize="30dp"
-        android:fontFamily="@font/happy_monkey"
-        ></TextView>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/txt_res3"
-        android:layout_marginTop="5dp"
-        android:textColorHint="@color/black"
-        android:textStyle="italic"
-        android:textSize="25dp"
-        android:fontFamily="@font/happy_monkey"
-        ></TextView>
-    <!--Preguntas4-->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/txt_Pregunta4"
-        android:layout_marginTop="7dp"
-        android:textColorHint="@color/principal"
-        android:textStyle="italic"
-        android:textSize="30dp"
-        android:fontFamily="@font/happy_monkey"
-        ></TextView>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/txt_res4"
-        android:layout_marginTop="5dp"
-        android:textColorHint="@color/black"
-        android:textStyle="italic"
-        android:textSize="25dp"
-        android:fontFamily="@font/happy_monkey"
-        ></TextView>
-    <!--Preguntas5-->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/txt_Pregunta5"
-        android:layout_marginTop="7dp"
-        android:textColorHint="@color/principal"
-        android:textStyle="italic"
-        android:textSize="30dp"
-        android:fontFamily="@font/happy_monkey"
-        ></TextView>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/txt_res5"
-        android:layout_marginTop="5dp"
-        android:textColorHint="@color/black"
-        android:textStyle="italic"
-        android:textSize="25dp"
-        android:fontFamily="@font/happy_monkey"
-        ></TextView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <!--Preguntas Frecuentes-->
+
+            <!--Preguntas1-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:fontFamily="@font/happy_monkey"
+                android:hint="@string/txt_Pregunta1"
+                android:textColorHint="@color/principal"
+                android:textSize="20dp"
+                android:textStyle="italic"></TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/happy_monkey"
+                android:hint="@string/txt_res1"
+                android:textColorHint="@color/black"
+                android:textSize="16dp"
+                android:textStyle="italic"></TextView>
+            <!--Preguntas2-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:fontFamily="@font/happy_monkey"
+                android:hint="@string/txt_Pregunta2"
+                android:textColorHint="@color/principal"
+                android:textSize="20dp"
+                android:textStyle="italic"></TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/happy_monkey"
+                android:hint="@string/txt_res2"
+                android:textColorHint="@color/black"
+                android:textSize="16dp"
+                android:textStyle="italic"></TextView>
+            <!--Preguntas3-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:fontFamily="@font/happy_monkey"
+                android:hint="@string/txt_Pregunta3"
+                android:textColorHint="@color/principal"
+                android:textSize="20dp"
+                android:textStyle="italic"></TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/happy_monkey"
+                android:hint="@string/txt_res3"
+                android:textColorHint="@color/black"
+                android:textSize="16dp"
+                android:textStyle="italic"></TextView>
+            <!--Preguntas4-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:fontFamily="@font/happy_monkey"
+                android:hint="@string/txt_Pregunta4"
+                android:textColorHint="@color/principal"
+                android:textSize="20dp"
+                android:textStyle="italic"></TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/happy_monkey"
+                android:hint="@string/txt_res4"
+                android:textColorHint="@color/black"
+                android:textSize="16dp"
+                android:textStyle="italic"></TextView>
+            <!--Preguntas5-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:fontFamily="@font/happy_monkey"
+                android:hint="@string/txt_Pregunta5"
+                android:textColorHint="@color/principal"
+                android:textSize="20dp"
+                android:textStyle="italic"></TextView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/happy_monkey"
+                android:hint="@string/txt_res5"
+                android:textColorHint="@color/black"
+                android:textSize="16dp"
+                android:textStyle="italic"></TextView>
 
 
-
-</LinearLayout>
+        </LinearLayout>
     </ScrollView>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        style="@style/BottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:elevation="8dp"
+        app:labelVisibilityMode="selected"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/bottom_navigation"></com.google.android.material.bottomnavigation.BottomNavigationView>
 
-</LinearLayout>
+
+</RelativeLayout>
 

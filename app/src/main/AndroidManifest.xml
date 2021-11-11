@@ -12,6 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
         <activity
+            android:name=".menu"
+            android:exported="true" />
+
+        <activity
             android:name=".preguntas_Frecuentes"
             android:exported="true" />
         <activity

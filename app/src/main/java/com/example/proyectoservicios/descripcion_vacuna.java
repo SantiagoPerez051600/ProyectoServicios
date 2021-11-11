@@ -10,7 +10,6 @@ import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.format.Time;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -34,13 +33,13 @@ import java.util.Calendar;
 
 public class descripcion_vacuna extends AppCompatActivity implements View.OnClickListener {
         Button btn_fecha,btn_hora,btn_agendar;
-        EditText txt_fecha,txt_hora, txt_raza, txt_edad, txt_reporte, txt_sintoma;
+        EditText txt_fecha,txt_hora, raza, edad, reporte, sintoma;
         TextView tv_precio,tv_descripcion, tv_nombre;
         ImageView imagenServicio;
-        public int dia,mes,anio,hora,minuto;
-        public int diaV,mesV,anioV,horaV;
-        public DatabaseReference Database;
-        public Context c=descripcion_vacuna.this;
+public int dia,mes,anio,hora,minuto;
+public int diaV,mesV,anioV,horaV;
+public DatabaseReference Database;
+public Context c=descripcion_vacuna.this;
         EnvioDeCorreos ec = new EnvioDeCorreos();
         String fecha,nombreServicio,CorreoUsuario;
         Notificaciones n = new Notificaciones(c);
@@ -59,10 +58,10 @@ protected void onCreate(Bundle savedInstanceState) {
         tv_descripcion=findViewById(R.id.tv_descripcion);
         tv_nombre = findViewById(R.id.tv_nombre);
 
-        txt_raza = findViewById(R.id.raza);
-        txt_edad = findViewById(R.id.edad);
-        txt_sintoma = findViewById(R.id.sintoma);
-        txt_reporte = findViewById(R.id.reporte);
+        raza = findViewById(R.id.raza);
+        edad = findViewById(R.id.edad);
+        sintoma = findViewById(R.id.sintoma);
+        reporte = findViewById(R.id.reporte);
 
         imagenServicio = findViewById(R.id.iw_imagenServicio);
         Database = FirebaseDatabase.getInstance().getReference();
@@ -78,36 +77,32 @@ protected void onCreate(Bundle savedInstanceState) {
         .load(servicio1.getURLfoto()).centerCrop().crossFade().diskCacheStrategy(DiskCacheStrategy.ALL).into(imagenServicio);
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         btn_agendar.setOnClickListener(new View.OnClickListener() {
-@Override
-public void onClick(View view) {
-        try {
-         if(txt_edad.getText().toString().isEmpty() || txt_raza.getText().toString().isEmpty() || txt_reporte.getText().toString().isEmpty() || txt_sintoma.getText().toString().isEmpty()){
-                 Toast toast1 = Toast.makeText(getApplicationContext(), "Verifique los campos", Toast.LENGTH_SHORT);
-                 toast1.show();
-         }else{
-                 if(validarFechar(diaV,mesV,anioV)==true){
-                         Toast toast1 = Toast.makeText(getApplicationContext(), "Se agendo su cita para " + txt_fecha.getText().toString(), Toast.LENGTH_SHORT);
-                         toast1.show();
-                         fecha = txt_fecha.getText().toString();
-                         fecha= fecha+"-"+txt_hora.getText().toString();
-                         nombreServicio=servicio1.getNombre().toString();
-                         CorreoUsuario=user.getEmail().toString();
-                         ec.enviarCorreo(fecha,nombreServicio,CorreoUsuario);
-                         n.EnviarNotificacion(fecha,nombreServicio);
-                         fecha = txt_fecha.getText().toString();
-                         agendar.crearCitaVacunas(fecha,txt_hora.getText().toString(),servicio1.getNombre(),user.getEmail(), txt_raza.getText().toString(),
-                                 txt_edad.getText().toString(),txt_sintoma.getText().toString(),txt_reporte.getText().toString());
+                @Override
+                public void onClick(View view) {
+                try {
+                        if(validarFechar(diaV,mesV,anioV)==true){
+                                Toast toast1 = Toast.makeText(getApplicationContext(), "Se agendo su cita para " + txt_fecha.getText().toString(), Toast.LENGTH_SHORT);
+                                toast1.show();
+                                fecha = txt_fecha.getText().toString();
+                                fecha= fecha+"-"+txt_hora.getText().toString();
+                                nombreServicio=servicio1.getNombre().toString();
+                                CorreoUsuario=user.getEmail().toString();
+                                ec.enviarCorreo(fecha,nombreServicio,CorreoUsuario);
+                                n.EnviarNotificacion(fecha,nombreServicio);
+                                fecha = txt_fecha.getText().toString();
+                                agendar.crearCitaVacunas(fecha,txt_hora.getText().toString(),servicio1.getNombre(),user.getEmail(), raza.getText().toString(),
+                                        edad.getText().toString(),sintoma.getText().toString(),reporte.getText().toString());
+                                txt_fecha.setText("");
+                                txt_hora.setText("");
 
-                 }else{
-                         Toast toast1 = Toast.makeText(getApplicationContext(), "Verifique la fecha por favor", Toast.LENGTH_SHORT);
-                         toast1.show();
-                 }
-         }
-
-        }catch (Exception e){
-                Toast toast1 = Toast.makeText(getApplicationContext(), "Verifique los campos", Toast.LENGTH_SHORT);
-                toast1.show();
-        }
+                        }else{
+                                Toast toast1 = Toast.makeText(getApplicationContext(), "Verifique la fecha por favor", Toast.LENGTH_SHORT);
+                                toast1.show();
+                        }
+                }catch (Exception e){
+                        Toast toast1 = Toast.makeText(getApplicationContext(), "Verifique los campos", Toast.LENGTH_SHORT);
+                        toast1.show();
+                }
         }
         });
         imageButton.setOnClickListener(new View.OnClickListener() {
@@ -153,33 +148,30 @@ public void onTimeSet(TimePicker view, int HourOfDay, int minute) {
         }
         }
 
-        public boolean validarFechar(int dia,int mes,int año){
-                boolean bandera = true;
-                Time hoy = new Time(Time.getCurrentTimezone());
-                hoy.setToNow();
-                int diaA = hoy.monthDay;
-                int mesA = hoy.month;
-                int añoA = hoy.year;
-                mesA = mesA+1;
-
-                if(año==añoA){
-                        if(mes==mesA){
-                                if(dia>diaA){
-                                        bandera = true;
-                                }else{
-                                        bandera = false;
-                                }
-                        }else if(mes<mesA){
-                                bandera = false;
-                        }else if(mes>mesA){
-                                bandera = true;
-                        }
-                }else if(año>añoA){
-                        bandera = true;
-                }else if(año<añoA){
-                        bandera = false;
-                }
-                return bandera;
+public boolean validarFechar(int dia,int mes,int año){
+        boolean bandera = true;
+        Time hoy = new Time(Time.getCurrentTimezone());
+        hoy.setToNow();
+        int diaA = hoy.monthDay;
+        int mesA = hoy.month;
+        int añoA = hoy.year;
+        mesA = mesA+1;
+        if(año==añoA){
+        if(mes==mesA){
+        if(dia>diaA){
+        bandera = true;
+        }else{
+        bandera = false;
+        }
+        }else if(mes<mesA){
+        bandera = false;
+        }else if(mes>mesA){
+        bandera = true;
+        }
+        }else if(año>añoA){
+        bandera = true;
+        }
+        return bandera;
         }
 
 

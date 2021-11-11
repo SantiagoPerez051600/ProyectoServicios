@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -15,6 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.proyectoservicios.models.Servicios;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -37,6 +39,11 @@ public class Listado extends AppCompatActivity {
         setContentView(R.layout.activity_listado);
         Database = FirebaseDatabase.getInstance().getReference();
         imageCerrar= findViewById(R.id.cerarSesion);
+
+        BottomNavigationView navigation = findViewById(R.id.bottom_navigation);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+
         imageCerrar.setColorFilter(Color.parseColor("#3E64FF"), PorterDuff.Mode.SRC_IN);
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         imageCerrar.setOnClickListener(new View.OnClickListener() {
@@ -52,7 +59,29 @@ public class Listado extends AppCompatActivity {
 
         init();
     }
-
+    private final BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            switch (item.getItemId()){
+                case R.id.firstFragment:
+                    Intent intent = new Intent(Listado.this, Listado.class);
+                    startActivity(intent);
+                    finish();
+                    return true;
+                case R.id.secondFragment:
+                     intent = new Intent(Listado.this, ApiDog.class);
+                    startActivity(intent);
+                    finish();
+                    return true;
+                case R.id.thirdFragment:
+                    intent = new Intent(Listado.this, preguntas_Frecuentes.class);
+                    startActivity(intent);
+                    finish();
+                    return true;
+            }
+            return false;
+        }
+    };
     public void init(){
         Database.child("servicios").addValueEventListener(new ValueEventListener() {
 
