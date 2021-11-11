@@ -136,6 +136,65 @@ public class RegistroUsuario extends AppCompatActivity {
         }
 
     }
+
+    /*public boolean camposllenos(){
+        boolean prueba= true;
+        String Semail = correo1.getText().toString();
+        String Snombre = nombre.getText().toString();
+        String Stelefono = telefono.getText().toString();
+        String Sdireccion = direccion.getText().toString();
+        String Scedula = cedula.getText().toString();
+        String Scontraseña = contraseña1.getText().toString();
+        String Sconfcontraseña = confcontraseña.getText().toString();
+
+
+        if(Semail.isEmpty() || !Patterns.EMAIL_ADDRESS.matcher(Semail).matches()){
+            correo1.setError("Correo Invalido");
+            prueba = false;
+            return false;
+        }else{
+            correo1.setError(null);
+        }
+        if (Snombre.isEmpty()){
+            nombre.setError("Nombre Invalido");
+            prueba = false;
+        }
+        if (Stelefono.isEmpty()){
+            telefono.setError("Telefono Invalido");
+            prueba = false;
+        }
+        if (Sdireccion.isEmpty()){
+            direccion.setError("Direccion Invalida");
+            prueba = false;
+        }
+        if (Scedula.isEmpty()){
+            cedula.setError("Cedula Invalida");
+            prueba = false;
+        }
+        if (Scontraseña.isEmpty()){
+            contraseña1.setError("Contraseña Invalida");
+            prueba = false;
+        } else if(Scontraseña.length() < 8){
+            //contraseña1.setError("Se necesitan mas de 8 caracteres");
+            prueba = false;
+        }else if(!Pattern.compile("[0-9]").matcher(Scontraseña).find()){
+            //contraseña1.setError("Almenos un numero");
+            prueba = false;
+        }else{
+            //contraseña1.setError(null);
+        }
+        if (Sconfcontraseña.isEmpty()){
+            confcontraseña.setError("Contraseña Invalida");
+            prueba = false;
+        }else if(!Sconfcontraseña.equals(Scontraseña)){
+            confcontraseña.setError("Deben ser iguales");
+            prueba = false;
+        }else {
+            registrar(Semail,Snombre, Stelefono, Sdireccion, Scedula, Scontraseña);
+        }
+        return prueba;
+    }*/
+
     public void registrar(String Semail, String Snombre, String Stelefono, String Sdireccion, String Scedula, String Scontraseña){
 
         mAuth.createUserWithEmailAndPassword(Semail, Scontraseña).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {

@@ -148,30 +148,33 @@ public void onTimeSet(TimePicker view, int HourOfDay, int minute) {
         }
         }
 
-public boolean validarFechar(int dia,int mes,int año){
-        boolean bandera = true;
-        Time hoy = new Time(Time.getCurrentTimezone());
-        hoy.setToNow();
-        int diaA = hoy.monthDay;
-        int mesA = hoy.month;
-        int añoA = hoy.year;
-        mesA = mesA+1;
-        if(año==añoA){
-        if(mes==mesA){
-        if(dia>diaA){
-        bandera = true;
-        }else{
-        bandera = false;
-        }
-        }else if(mes<mesA){
-        bandera = false;
-        }else if(mes>mesA){
-        bandera = true;
-        }
-        }else if(año>añoA){
-        bandera = true;
-        }
-        return bandera;
+        public boolean validarFechar(int dia,int mes,int año){
+                boolean bandera = true;
+                Time hoy = new Time(Time.getCurrentTimezone());
+                hoy.setToNow();
+                int diaA = hoy.monthDay;
+                int mesA = hoy.month;
+                int añoA = hoy.year;
+                mesA = mesA+1;
+
+                if(año==añoA){
+                        if(mes==mesA){
+                                if(dia>diaA){
+                                        bandera = true;
+                                }else{
+                                        bandera = false;
+                                }
+                        }else if(mes<mesA){
+                                bandera = false;
+                        }else if(mes>mesA){
+                                bandera = true;
+                        }
+                }else if(año>añoA){
+                        bandera = true;
+                }else if(año<añoA){
+                        bandera = false;
+                }
+                return bandera;
         }
 
 
