@@ -53,4 +53,24 @@
     <string name="txt_Edad">Edad</string>
     <string name="txt_Reporte">Reporte de vacunas</string>
     <string name="txt_Sintomas">¿Algun sintoma?</string>
+    <!--Preguntas Frecuentes-->
+    <string name="txt_titulo">Preguntas Frecuentes</string>
+
+    <string name="txt_Pregunta1">¿Puede entrar mi perro a establecimientos públicos?</string>
+    <string name="txt_res1">Salvo en el caso de perros guía, l@s dueñ@s de hoteles, restaurantes, cafeterías y similares , podrán prohibir a su criterio la entrada de animales.</string>
+
+    <string name="txt_Pregunta2">¿Qué debo hacer si me ha mordido un animal?</string>
+    <string name="txt_res2">Las personas que hayan sido agredidas o lesionadas por algún animal deben dirigirse a su médico/a que será quien decida las medidas a adoptar.</string>
+
+    <string name="txt_Pregunta3">¿Qué debo hacer en caso de que mi perro muerda a una persona o a otro animal?</string>
+    <string name="txt_res3">Todos los animales que hayan causado lesiones a una persona o a otro animal, así como los sospechosos de tal circunstancia se someterán a control veterinario municipal durante 14 días.</string>
+
+    <string name="txt_Pregunta4">¿Cuántos perros y gatos puedo tener en mi domicilio?</string>
+    <string name="txt_res4">Máximo cinco, para tener más es necesaria la autorización de los servicios competentes del Ayuntamiento.</string>
+
+    <string name="txt_Pregunta5">¿Hay algún sitio en el que las esterilizaciones y las vacunas sean más baratas?</string>
+    <string name="txt_res5">
+        Cada veterinario puede establecer la tarifa que considere más oportuna en relación con las actuaciones clínicas que practica. En este grupo se incluyen, tanto la esterilización como la vacunación de los animales de compañía.
+</string>
+
 </resources>

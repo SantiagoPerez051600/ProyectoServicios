@@ -54,4 +54,22 @@
     <string name="txt_Edad">Years</string>
     <string name="txt_Reporte">Vaccine report</string>
     <string name="txt_Sintomas">Any symptoms?</string>
+    <!--Preguntas Frecuentes-->
+    <string name="txt_titulo">frequent questions</string>
+
+    <string name="txt_Pregunta1">Can my dog enter public establishments?</string>
+    <string name="txt_res1">Except in the case of guide dogs, the owners of hotels, restaurants, cafeterias and the like may, at their discretion, prohibit the entry of animals.</string>
+
+    <string name="txt_Pregunta2">What should I do if an animal has bitten me?</string>
+    <string name="txt_res2">People who have been attacked or injured by an animal should contact their doctor who will decide the measures to adopt.</string>
+
+    <string name="txt_Pregunta3">What should I do in case my dog bites a person or another animal?</string>
+    <string name="txt_res3">All animals that have caused injuries to a person or another animal, as well as those suspected of such a circumstance, will be subjected to municipal veterinary control for 14 days</string>
+
+    <string name="txt_Pregunta4">How many dogs and cats can I have at my home?</string>
+    <string name="txt_res4">Maximum five, to have more it is necessary the authorization of the competent services of the City Council.</string>
+
+    <string name="txt_Pregunta5">Is there a place where sterilizations and vaccines are cheaper?</string>
+    <string name="txt_res5">Each veterinarian can establish the rate that he considers most appropriate in relation to the clinical actions he practices. This group includes both sterilization and vaccination of companion animals.</string>
+
 </resources>
